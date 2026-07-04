@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ANGER Operador Logístico | Transporte y Distribución Nacional Segura</title>
+<!-- Home React esperado en /; si Vite sigue mostrando la plantilla, revisar src/App.tsx -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#eff4ff",
+                    "on-surface": "#0f1c2d",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#cddbf2",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#b9c3ff",
+                    "background": "#f8f9ff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb4a8",
+                    "surface": "#f8f9ff",
+                    "inverse-surface": "#243143",
+                    "tertiary-fixed": "#e0e3e6",
+                    "secondary-fixed": "#ffdad4",
+                    "secondary-container": "#ea0703",
+                    "outline-variant": "#c6c5d2",
+                    "outline": "#767681",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-highest": "#d6e3fb",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed-variant": "#354282",
+                    "on-primary-container": "#8895db",
+                    "tertiary": "#191c1f",
+                    "on-secondary-fixed-variant": "#930100",
+                    "on-tertiary-fixed": "#191c1e",
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#0f1c2d",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#410000",
+                    "primary": "#021356",
+                    "surface-tint": "#4d5a9c",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#454650",
+                    "tertiary-container": "#2e3134",
+                    "on-primary-fixed": "#021356",
+                    "secondary": "#bc0100",
+                    "on-secondary-container": "#fffbff",
+                    "surface-container-high": "#dce9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-desktop": "32px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "body-sm": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "label-sm": ["Montserrat"],
+                    "body-lg": ["Montserrat"],
+                    "label-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(2, 19, 86, 0.95) 30%, rgba(2, 19, 86, 0.4) 100%);
+        }
+        .skew-bg {
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        }
+        .transition-cubic {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm h-20 transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="flex items-center">
+<img alt="ANGER Operador Logístico Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAp7aEN1SeJfRRLdwxBouv6aReIt9xq71NDrOopr3tc_pu3_qouiMitn8TWqJkcCVIJLcnZCMJIzjTVfhDqMX_HugATT8DtS5eltX8Njl2wF3uVp_hyGe0l2be6WbiPnM0FMgsxDYj04qa6ddRRo1krr_G_7qR1E71RF-Qt4WmHY5OLV275vqpZ-6_ibx9KTIm5vSGeFJzMH2-ZeCnrTfIBsVw09UW5_G6r16lVJ-M9RfLFXfp-aaGkjm_v-8-5w1esbnyQVeNT1bA"/>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary pb-1 font-label-md text-label-md transition-colors" href="#">Inicio</a>
+<a class="text-on-surface dark:text-inverse-on-surface hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md" href="#">Nosotros</a>
+<a class="text-on-surface dark:text-inverse-on-surface hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md" href="#">Servicios</a>
+<a class="text-on-surface dark:text-inverse-on-surface hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md" href="#">Contáctanos</a>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-bold px-6 py-2 rounded-lg transition-transform active:scale-95 duration-150 font-label-md text-label-md">
+                    Cotizar Envío
+                </button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Truck on highway" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvgExlh93vARy8zeTazpUZMh6IarXR9C4GeZT24ZXu_3fJtFPu3AZ5SEyyt1m9YcxcGIdwQDqdjgbX6gCWftpEzKWCqiL16vWEcDPLOLg-9iz7J_c4hYkBdfmo4SIUAQhnDMjIqHj99zzWf_AO_sEmCNvUvpjAMVDy7G2TOmpboPLtqbAQ91TWC-3-QlJawivHD9eXQzEdqbw0mmcSJLoV_bwu3RZvk_ZJMVhrrJw44fGcNDx5lPuih0iHU"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto text-on-primary">
+<div class="max-w-2xl">
+<span class="bg-secondary text-white px-4 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider mb-6 inline-block">Soluciones de Transporte 360°</span>
+<h1 class="font-headline-lg text-headline-lg mb-6 leading-tight">
+                        Operador Logístico en Perú: <br/>
+<span class="text-secondary-fixed">Transporte y Distribución Nacional Segura</span>
+</h1>
+<p class="font-body-lg text-body-lg mb-8 opacity-90">
+                        Optimizamos su cadena de suministro con tecnología de punta y una flota de vanguardia para garantizar entregas precisas en todo el territorio peruano.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary hover:bg-secondary-container text-white px-8 py-4 rounded-lg font-bold transition-cubic hover:shadow-xl active:scale-95">
+                            Nuestros Servicios
+                        </button>
+<button class="bg-white/10 backdrop-blur-md border-2 border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold transition-cubic">
+                            Ver Cobertura
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Signals - Bento Style -->
+<section class="py-margin-desktop bg-surface">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-white border border-outline-variant p-8 rounded-xl transition-cubic hover:border-secondary hover:shadow-lg group">
+<div class="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white" style="font-variation-settings: 'FILL' 1;">gps_fixed</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Monitoreo Satelital</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Control total de su mercadería en tiempo real con tecnología GPS avanzada y protocolos de seguridad preventivos.</p>
+</div>
+<div class="bg-white border border-outline-variant p-8 rounded-xl transition-cubic hover:border-secondary hover:shadow-lg group">
+<div class="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Carga Asegurada</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Respaldo total ante cualquier eventualidad. Trabajamos con las mejores aseguradoras para garantizar su inversión.</p>
+</div>
+<div class="bg-white border border-outline-variant p-8 rounded-xl transition-cubic hover:border-secondary hover:shadow-lg group">
+<div class="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Flota Homologada</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Unidades modernas que cumplen con los más altos estándares técnicos y certificaciones del sector logístico.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Solutions by Sector -->
+<section class="py-margin-desktop bg-primary text-on-primary">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-4">Soluciones por Sector</h2>
+<p class="text-primary-fixed-dim max-w-xl">Experiencia especializada en el manejo de mercancía crítica para diversas industrias peruanas.</p>
+</div>
+<div class="h-1 bg-secondary w-24"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Retail -->
+<div class="relative group overflow-hidden rounded-xl h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLu4_uOiSoQpdsvg96p29TlK9QH8EgRmaQ0iAM8iJ_2NS7W59CXve3qXkWCVX-C8YjXds1_ZzoNzKx9OQADxH_OXXmzE0F4dElC-m5N_Ig-BKPHWT-oBlriB2Jpnk7N5oQESpD7emSYedfd77ex2PXOAg7DJgNdZZpE0A4E031kPPHI5qZ_IuXQOHJYsgD65ISSntaY6EYGmM8TkkJmP0R7vUR95JKAeknJ7YemJPaaa2udO4lPl9UgKnHpj')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="material-symbols-outlined text-secondary mb-2">shopping_bag</span>
+<h4 class="font-headline-sm text-headline-sm">Retail</h4>
+<p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">Distribución a puntos de venta y centros comerciales a nivel nacional.</p>
+</div>
+</div>
+<!-- Consumo Masivo -->
+<div class="relative group overflow-hidden rounded-xl h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A high-contrast professional photograph of various consumer goods boxes neatly stacked on pallets within a bright, high-tech distribution center. The scene is illuminated with modern cool-toned lighting, reflecting the reliable navy and red corporate identity of a premium logistics operator. The focus is sharp, emphasizing scale and efficiency in a light-mode warehouse environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrDnX6PvgViz4mdcMt_ffz9XYuaWchn55_tqXvlEvquPOyMBkPrR91-P7CgrEejTBLxwlNiwsxNZFgWXrKiJuwQz0o6mO1R1JoULXzjMSf9npy29FBuHDeK2Q9vvIkxoOtgsc1u61dgAqf-2eTZf-JbMNlIt9OCg1pNxsobcW7-FNaRMIpLirJdIcqqSc6v0n39THudp0T5imH9CrGC-t8q7GBo3xLIamVL7jk1PdYBbRpFkJo3NQ6JAdI964CT2rxZHXApYJtK2zv')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="material-symbols-outlined text-secondary mb-2">inventory_2</span>
+<h4 class="font-headline-sm text-headline-sm">Consumo Masivo</h4>
+<p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">Logística ágil para productos de alta rotación y demanda constante.</p>
+</div>
+</div>
+<!-- Farmacéutico -->
+<div class="relative group overflow-hidden rounded-xl h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A clinical and sterile professional environment featuring a pharmaceutical logistics cold chain storage facility. The lighting is bright and white, emphasizing cleanliness and precision. Professional staff in protective gear handle specialized medical crates. The atmosphere conveys trust and high-stakes reliability, utilizing a palette of clean whites and corporate navy blue accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSBZZTcK1scx_mj_heRJTfGYDjkm3-qXSVXRrd9W8ocE9ChJAzl5Ggt9QQfwGpeK73aUKlYQubfMPSPCg-V1QRc2-_qQUtEIm3Syh2KYom62zO7GPg_eoBiHenApR0cQRPLeXqlDFK7oH0SqSx-jP1e5gNKTkszMtTySxuqPnSgQJgqqgky4uIwNob6HzAFMfyhGJ1sM2omlPISrYA0Sn8oDFk4gKu1VjtKKY1hoNKFm8INypWyIAg54sjPRHYrLuppL5zZXY5LdKQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="material-symbols-outlined text-secondary mb-2">medication</span>
+<h4 class="font-headline-sm text-headline-sm">Farmacéutico</h4>
+<p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">Manejo especializado de medicinas con control estricto de temperatura.</p>
+</div>
+</div>
+<!-- Minería -->
+<div class="relative group overflow-hidden rounded-xl h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLtyys-z4Jg1CZSYHK4nnCJsQCXcJEqYhxyYE3OHfSb6jTGZ5l4dHaKYMQWeQGyBC8lVjQfG0NtWaSdGgaLUA1jwOrT3Wba-1bkMtkUYywrmcwN3CRxGu3r1cQnqA07lcwv7ys1vhfq_sd1GBejHljhfV9bvSoEQbnvg7gQdCqlCWHWgYvCkN_gi3DPUfrgPIlsTj7fayNgA40Wc9WKoMrGkPJyuwB_qvXnSt8NKcHNRzO08EqG1zhv5B25k')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="material-symbols-outlined text-secondary mb-2">precision_manufacturing</span>
+<h4 class="font-headline-sm text-headline-sm">Minería</h4>
+<p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">Transporte de maquinaria pesada e insumos industriales a zonas remotas.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Services -->
+<section class="py-margin-desktop bg-surface-container-low">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Nuestros Servicios Principales</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Modelos de transporte diseñados para ajustarse a los requerimientos de tiempo y presupuesto de su empresa.</p>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- ANGER EXPRESS -->
+<div class="bg-white rounded-2xl p-1 shadow-sm border border-outline-variant hover:shadow-2xl transition-cubic overflow-hidden">
+<div class="bg-primary text-on-primary p-4 text-center skew-bg ml-[-1px]">
+<h3 class="font-bold text-lg">ANGER EXPRESS</h3>
+</div>
+<div class="p-8 text-center">
+<span class="material-symbols-outlined text-5xl text-secondary mb-6">bolt</span>
+<p class="text-on-surface-variant mb-8 h-20">Entregas ultra-rápidas en Lima Metropolitana y principales provincias para mercancía de alta prioridad.</p>
+<button class="w-full border-2 border-primary text-primary font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-colors">Saber más</button>
+</div>
+</div>
+<!-- EXCLUSIVO -->
+<div class="bg-white rounded-2xl p-1 shadow-sm border border-outline-variant hover:shadow-2xl transition-cubic overflow-hidden relative transform md:-translate-y-4">
+<div class="bg-secondary text-on-primary p-4 text-center skew-bg ml-[-1px]">
+<h3 class="font-bold text-lg">EXCLUSIVO</h3>
+</div>
+<div class="p-8 text-center">
+<span class="material-symbols-outlined text-5xl text-secondary mb-6">workspace_premium</span>
+<p class="text-on-surface-variant mb-8 h-20">Unidades dedicadas únicamente a su carga. Sin paradas intermedias ni consolidación. Máxima seguridad.</p>
+<button class="w-full bg-primary text-white font-bold py-3 rounded-lg hover:bg-primary-container transition-colors shadow-lg">Saber más</button>
+</div>
+</div>
+<!-- AÉREO -->
+<div class="bg-white rounded-2xl p-1 shadow-sm border border-outline-variant hover:shadow-2xl transition-cubic overflow-hidden">
+<div class="bg-primary text-on-primary p-4 text-center skew-bg ml-[-1px]">
+<h3 class="font-bold text-lg">AÉREO</h3>
+</div>
+<div class="p-8 text-center">
+<span class="material-symbols-outlined text-5xl text-secondary mb-6">flight_takeoff</span>
+<p class="text-on-surface-variant mb-8 h-20">Conexión directa con las principales aerolíneas para traslados urgentes que no pueden esperar el transporte terrestre.</p>
+<button class="w-full border-2 border-primary text-primary font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-colors">Saber más</button>
+</div>
+</div>
+</div>
+</section>
+<!-- National Coverage -->
+<section class="py-margin-desktop bg-white overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto flex flex-col lg:flex-row items-center gap-16">
+<div class="flex-1">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Cobertura Nacional Estratégica</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-8 leading-relaxed">
+                        Contamos con una red logística que abarca costa, sierra y selva. Nuestros centros de consolidación están ubicados estratégicamente para reducir los tiempos de tránsito y asegurar que su carga llegue a tiempo, incluso en los destinos más remotos del Perú.
+                    </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="font-bold">24/7 Operatividad</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="font-bold">Rutas Homologadas</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="font-bold">Control de Flota</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="font-bold">Last-Mile Delivery</span>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full relative">
+<div class="aspect-square bg-surface-container rounded-3xl overflow-hidden shadow-inner border border-outline-variant">
+<img class="w-full h-full object-cover grayscale opacity-50" data-alt="A highly detailed and modern 3D map of Peru showing major highway connections and transport routes. The map uses a sophisticated color scheme of deep navy for the terrain and bright vibrant red glowing lines for the logistics routes. Sleek minimalist pins mark key cities. The style is clean, corporate, and high-tech, perfect for a premium logistics operator's coverage section." data-location="Peru" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTihCvv-K2RqyFRkEC3KcDbBX5q6C6svZkYSmpB34LCLTccHFWWRfPBS643a5aTSGCU9FfoV-zt-MFSZ4jr58wy6NcXpwwcvMijhMo1YpaKB0R8gUBSQrxat_VzrRL6Nq6eywzaIvLlkv9pW8w8ZBBzhxQZfqnRy3DL2zHJAbOhLel25XSJxdiHcHQd7FZPh8eJjFRNCSGVNKyhACJau5W0YkygKXuty5PmqzZjXau4zovGMsIyYRxz7A80Q8jZKqJP4p2s3tU4G19"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="animate-pulse bg-secondary/20 p-8 rounded-full border-2 border-secondary">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">public</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="py-20 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary"></div>
+<div class="absolute top-0 right-0 w-1/3 h-full bg-secondary skew-x-12 translate-x-1/2 opacity-20"></div>
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg text-white mb-8">¿Listo para optimizar los tiempos de tu cadena logística?</h2>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="bg-secondary text-white px-10 py-5 rounded-lg font-bold text-lg hover:shadow-[0_0_30px_rgba(188,1,0,0.4)] transition-cubic active:scale-95">
+                        Cotizar mi Proyecto Ahora
+                    </button>
+<a class="flex items-center gap-3 text-white hover:text-secondary transition-colors font-bold text-lg" href="tel:+511234567">
+<span class="material-symbols-outlined">phone_in_talk</span>
+                        Contactar a un Asesor
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-tertiary-container">
+<div class="w-full py-margin-desktop px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+<div class="col-span-1 md:col-span-1">
+<img alt="Logo" class="h-10 mb-6 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAp7aEN1SeJfRRLdwxBouv6aReIt9xq71NDrOopr3tc_pu3_qouiMitn8TWqJkcCVIJLcnZCMJIzjTVfhDqMX_HugATT8DtS5eltX8Njl2wF3uVp_hyGe0l2be6WbiPnM0FMgsxDYj04qa6ddRRo1krr_G_7qR1E71RF-Qt4WmHY5OLV275vqpZ-6_ibx9KTIm5vSGeFJzMH2-ZeCnrTfIBsVw09UW5_G6r16lVJ-M9RfLFXfp-aaGkjm_v-8-5w1esbnyQVeNT1bA"/>
+<p class="text-primary-fixed-dim text-body-sm font-body-sm">
+                        Líderes en transporte nacional y soluciones logísticas integrales para el crecimiento de su empresa.
+                    </p>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Enlaces Rápidos</h5>
+<ul class="space-y-3">
+<li><a class="text-primary-fixed-dim hover:text-white transition-colors font-label-md text-label-md" href="#">Privacidad</a></li>
+<li><a class="text-primary-fixed-dim hover:text-white transition-colors font-label-md text-label-md" href="#">Términos y Condiciones</a></li>
+<li><a class="text-primary-fixed-dim hover:text-white transition-colors font-label-md text-label-md" href="#">Soporte</a></li>
+<li><a class="text-primary-fixed-dim hover:text-white transition-colors font-label-md text-label-md" href="#">Certificaciones</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Contacto</h5>
+<ul class="space-y-4 text-primary-fixed-dim text-body-sm font-body-sm">
+<li class="flex gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">location_on</span>
+<span>Lima, Perú</span>
+</li>
+<li class="flex gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">mail</span>
+<span>contacto@angerlogistica.com</span>
+</li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Boletín Informativo</h5>
+<div class="flex">
+<input class="bg-white/10 border-none text-white rounded-l-lg w-full focus:ring-secondary" placeholder="Su correo" type="email"/>
+<button class="bg-secondary text-white px-4 rounded-r-lg">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-primary-fixed-dim text-body-sm font-body-sm">© 2024 ANGER Operador Logístico. Todos los derechos reservados.</p>
+<div class="flex gap-6">
+<a class="text-primary-fixed-dim hover:text-secondary" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-primary-fixed-dim hover:text-secondary" href="#"><span class="material-symbols-outlined">hub</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('h-16', 'shadow-md');
+                nav.classList.remove('h-20', 'shadow-sm');
+            } else {
+                nav.classList.add('h-20', 'shadow-sm');
+                nav.classList.remove('h-16', 'shadow-md');
+            }
+        });
+    </script>
+</body></html>

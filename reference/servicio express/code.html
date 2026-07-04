@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ANGER Express - Distribución Nacional B2B</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#767681",
+                    "on-surface-variant": "#454650",
+                    "secondary-container": "#ea0703",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-tertiary-container": "#96999c",
+                    "secondary": "#bc0100",
+                    "inverse-primary": "#b9c3ff",
+                    "on-primary-container": "#8895db",
+                    "surface-tint": "#4d5a9c",
+                    "tertiary": "#191c1f",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c6c5d2",
+                    "on-secondary-fixed": "#410000",
+                    "background": "#f8f9ff",
+                    "surface-container-highest": "#d6e3fb",
+                    "inverse-surface": "#243143",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#021356",
+                    "tertiary-fixed": "#e0e3e6",
+                    "surface-container": "#e6eeff",
+                    "on-surface": "#0f1c2d",
+                    "secondary-fixed": "#ffdad4",
+                    "primary-fixed": "#dee1ff",
+                    "on-primary-fixed-variant": "#354282",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#2e3134",
+                    "surface-container-low": "#eff4ff",
+                    "surface-dim": "#cddbf2",
+                    "primary-fixed-dim": "#b9c3ff",
+                    "primary-container": "#1d2b6b",
+                    "on-secondary-container": "#fffbff",
+                    "surface-container-high": "#dce9ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#ffb4a8",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed": "#021356",
+                    "on-background": "#0f1c2d",
+                    "on-secondary-fixed-variant": "#930100",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "surface-variant": "#d6e3fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-sm": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "headline-sm": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "body-lg": ["Montserrat"],
+                    "label-md": ["Montserrat"],
+                    "label-sm": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(2, 19, 86, 0.9) 0%, rgba(2, 19, 86, 0.7) 50%, rgba(2, 19, 86, 0) 100%);
+        }
+        .border-accent-left {
+            border-left: 4px solid #bc0100;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">ANGER Operador Logístico</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-label-md text-label-md text-on-surface dark:text-inverse-on-surface hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Inicio</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-inverse-on-surface hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Nosotros</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary pb-1" href="#">Servicios</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-inverse-on-surface hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Contáctanos</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-3 font-label-md text-label-md font-bold rounded-lg hover:bg-primary-container transition-all Active:scale-95 duration-150 shadow-md">
+                Cotizar Envío
+            </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-[600px] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A high-angle professional photograph of a massive, modern logistics warehouse interior. Industrial shelving units stretch into the distance filled with diverse palletized goods. The lighting is crisp and bright, highlighting the clean concrete floors and the organized distribution hub. The overall aesthetic is professional, corporate, and efficient, dominated by deep navy blue structural elements and subtle red industrial accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCowqYDG_CWHGJrcm3B88wZ4Uq-a_jhBbn76ke40-xPZWWVL-jguLHJzISLc8oKNHJi0rbOVHqww2-edBy2v56sujsjKtnGsqpKiLQ1Dppogi6a3wg0AbooYt9C57vRjdlP47PJLTccMgVDQjiEDtlOxwov_49CnSLN-iTI_HkE0q7lPvImSuZFb5RZNIWeC5RPt5zJcHW-YryTWMWcV2glSAqeRVAvdPvp3D6waM46UUQh4TuXJw1W5dEZBsHS9fI-Z-BLbclrNgu')"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="relative h-full flex flex-col justify-center px-margin-desktop max-w-container-max mx-auto text-white">
+<div class="max-w-2xl">
+<h1 class="font-headline-lg text-headline-lg mb-6 leading-tight">Distribución Nacional Express y Logística Comercial B2B</h1>
+<p class="font-body-lg text-body-lg text-on-primary-container leading-relaxed mb-8">Conectamos tus almacenes con los principales puntos de venta y Centros de Distribución del país mediante un servicio ágil, monitoreado y diseñado para cumplir ventanas horarias estrictas.</p>
+<div class="flex gap-4">
+<button class="bg-secondary text-on-primary px-8 py-4 font-label-md text-label-md font-bold rounded hover:opacity-90 transition-all flex items-center gap-2 shadow-lg">
+<span class="material-symbols-outlined">local_shipping</span>
+                        OPERACIÓN EXPRESS
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Block 1: Retail Focus -->
+<section class="py-24 bg-white">
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="relative rounded-xl overflow-hidden shadow-2xl h-[450px]">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-quality image of a logistic professional's hands holding a tablet and a stylus, reviewing a digital manifest. In the background, a bustling distribution center with red and white delivery trucks is softly blurred. The image captures the precision and digital-first approach of modern B2B logistics, using a clean corporate color palette of navy, white, and red." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGB_e6Rm0slfQjg4WwAYBLXA6TJE09khyn5aCs3WfxNRK0ixE7cw10lftc-2pWd942MEfwMBrVc2VFFBYZD7wphVVlbqCdU7PwDR8622CmlwvXyrvmSSSBMsgYHqoaOkCgsmVil1n48C14a6nUux5H7BGWQexnDnve19k6N-akKAe_EE2BIVQSzs46aNuPBraLIoEKwrZZsTSJ_Tj-FkJKi0hWLssE1HV5Q_B-82kbTNK1VBiRqEHAa8Cxb42zSN1O0K8Na4F7hoUr"/>
+<div class="absolute bottom-6 right-6 bg-primary p-6 rounded shadow-xl">
+<span class="text-on-primary font-headline-md text-headline-md block">99.8%</span>
+<span class="text-on-primary-container font-label-md text-label-md">ENTREGA A TIEMPO</span>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<span class="text-secondary font-label-md text-label-md tracking-widest block mb-4">ESPECIALISTAS EN RETAIL</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Gestión Específica para Retail y Consumo Masivo</h2>
+<div class="w-20 h-1 bg-secondary mb-8"></div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">Entendemos el impacto financiero de un rechazo o una penalidad por impuntualidad. Por ello, nuestro servicio Express incluye un control riguroso de citas en las principales cadenas de supermercados, tiendas por departamento y homecenters de Lima y provincias.</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Nos encargamos del flujo documentario completo y el retorno oportuno de tus guías de remisión firmadas, garantizando un ciclo comercial impecable.</p>
+</div>
+</div>
+</section>
+<!-- Technical Block 2: SLAs -->
+<section class="py-24 bg-surface-container-low">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Estándares de Servicio (SLAs)</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Nuestro compromiso con la excelencia operativa se mide en cada kilómetro.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- SLA Item 1 -->
+<div class="bg-white p-8 rounded border border-outline-variant hover:shadow-xl hover:border-secondary transition-all group border-accent-left">
+<div class="w-14 h-14 bg-surface-container flex items-center justify-center rounded mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" style="font-size: 32px;">support_agent</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Ejecutivo Dedicado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Un solo canal de comunicación directo para la coordinación operativa de tus despachos y contingencias en ruta.</p>
+</div>
+<!-- SLA Item 2 -->
+<div class="bg-white p-8 rounded border border-outline-variant hover:shadow-xl hover:border-secondary transition-all group border-accent-left">
+<div class="w-14 h-14 bg-surface-container flex items-center justify-center rounded mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" style="font-size: 32px;">assignment_turned_in</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Confirmación Diaria</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Reportes automatizados del estado de tus envíos al cierre de cada jornada operativa para un control total.</p>
+</div>
+<!-- SLA Item 3 -->
+<div class="bg-white p-8 rounded border border-outline-variant hover:shadow-xl hover:border-secondary transition-all group border-accent-left">
+<div class="w-14 h-14 bg-surface-container flex items-center justify-center rounded mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" style="font-size: 32px;">schedule</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Recojos Flexibles</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Programación de unidades adaptada a los picos de demanda y flujos de salida de tu centro de distribución.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 bg-primary overflow-hidden relative">
+<!-- Subtle Grid Pattern -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+<div class="px-margin-desktop max-w-container-max mx-auto text-center relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-8">Optimiza tu logística nacional con ANGER Express</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl mx-auto mb-10">Solicita hoy una cotización personalizada y descubre cómo podemos elevar tus estándares de entrega B2B.</p>
+<button class="bg-secondary text-on-primary px-10 py-5 font-label-md text-label-md font-bold rounded hover:bg-secondary-container transition-all shadow-2xl scale-110 hover:scale-105 active:scale-95 duration-150">
+                Solicitar Tarifa Express
+            </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-tertiary-container w-full py-margin-desktop px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between gap-gutter border-t border-primary-container">
+<div class="flex flex-col gap-4">
+<div class="text-headline-sm font-headline-sm font-bold text-on-primary dark:text-on-tertiary-container">ANGER Operador Logístico</div>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim max-w-sm">Soluciones logísticas integrales para empresas que exigen puntualidad y seguridad en cada entrega.</p>
+<div class="text-body-sm font-body-sm text-on-primary mt-4">© 2024 ANGER Operador Logístico. Todos los derechos reservados.</div>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter md:gap-16">
+<div class="flex flex-col gap-3">
+<span class="text-on-primary font-bold text-label-md mb-2">Legal</span>
+<a class="font-label-md text-label-md text-primary-fixed-dim hover:text-white hover:underline transition-all" href="#">Privacidad</a>
+<a class="font-label-md text-label-md text-primary-fixed-dim hover:text-white hover:underline transition-all" href="#">Términos y Condiciones</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-on-primary font-bold text-label-md mb-2">Compañía</span>
+<a class="font-label-md text-label-md text-primary-fixed-dim hover:text-white hover:underline transition-all" href="#">Soporte</a>
+<a class="font-label-md text-label-md text-primary-fixed-dim hover:text-white hover:underline transition-all" href="#">Certificaciones</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-on-primary font-bold text-label-md mb-2">Siguenos</span>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary hover:bg-secondary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary hover:bg-secondary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">work</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal interaction
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.grid > div, h2, p').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

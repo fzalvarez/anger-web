@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ANGER Exclusivo | Operador Logístico</title>
+<!-- Google Fonts: Montserrat -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#4d5a9c",
+                        "inverse-surface": "#243143",
+                        "on-tertiary-container": "#96999c",
+                        "primary-fixed-dim": "#b9c3ff",
+                        "on-surface-variant": "#454650",
+                        "secondary-fixed-dim": "#ffb4a8",
+                        "primary-container": "#1d2b6b",
+                        "on-secondary-fixed": "#410000",
+                        "on-background": "#0f1c2d",
+                        "primary-fixed": "#dee1ff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-primary-fixed": "#021356",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#930100",
+                        "secondary-container": "#ea0703",
+                        "surface-container-highest": "#d6e3fb",
+                        "primary": "#021356",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary": "#bc0100",
+                        "on-surface": "#0f1c2d",
+                        "surface-dim": "#cddbf2",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c6c5d2",
+                        "tertiary-fixed": "#e0e3e6",
+                        "on-primary-fixed-variant": "#354282",
+                        "inverse-primary": "#b9c3ff",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9ff",
+                        "surface": "#f8f9ff",
+                        "surface-container": "#e6eeff",
+                        "tertiary": "#191c1f",
+                        "tertiary-container": "#2e3134",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#8895db",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#fffbff",
+                        "surface-bright": "#f8f9ff",
+                        "outline": "#767681",
+                        "surface-variant": "#d6e3fb",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c4c7ca"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Montserrat"],
+                        "headline-sm": ["Montserrat"],
+                        "body-sm": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest border-b border-outline-variant shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="text-headline-md font-headline-md font-bold text-primary">
+                ANGER Operador Logístico
+            </div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-md text-label-md text-on-surface hover:text-secondary transition-colors" href="#">Inicio</a>
+<a class="font-label-md text-label-md text-on-surface hover:text-secondary transition-colors" href="#">Nosotros</a>
+<a class="font-label-md text-label-md text-secondary font-bold border-b-2 border-secondary pb-1" href="#">Servicios</a>
+<a class="font-label-md text-label-md text-on-surface hover:text-secondary transition-colors" href="#">Contáctanos</a>
+<button class="ml-4 bg-primary text-on-primary font-bold px-6 py-2 rounded shadow-sm hover:scale-95 transition-transform duration-150">
+                    Cotizar Envío
+                </button>
+</div>
+<!-- Mobile Menu Toggle (Simplified) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover brightness-[0.4]" src="https://lh3.googleusercontent.com/aida/AP1WRLvgExlh93vARy8zeTazpUZMh6IarXR9C4GeZT24ZXu_3fJtFPu3AZ5SEyyt1m9YcxcGIdwQDqdjgbX6gCWftpEzKWCqiL16vWEcDPLOLg-9iz7J_c4hYkBdfmo4SIUAQhnDMjIqHj99zzWf_AO_sEmCNvUvpjAMVDy7G2TOmpboPLtqbAQ91TWC-3-QlJawivHD9eXQzEdqbw0mmcSJLoV_bwu3RZvk_ZJMVhrrJw44fGcNDx5lPuih0iHU"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto py-20">
+<div class="max-w-4xl space-y-6">
+<span class="inline-block bg-secondary text-on-secondary px-4 py-1 font-label-md text-label-md tracking-widest uppercase rounded-sm">ANGER EXCLUSIVO</span>
+<h1 class="font-headline-lg text-headline-lg text-white leading-tight">
+                        Transporte de Carga en Unidades Completas y Dedicadas (Furgones y Plataformas)
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl">
+                        Soluciones de transporte exclusivo a nivel nacional para operaciones logísticas industriales, farmacéuticas y mineras de alta envergadura.
+                    </p>
+<div class="pt-8">
+<a class="bg-secondary hover:bg-red-700 text-white font-bold px-10 py-4 rounded-lg shadow-lg flex items-center gap-3 w-fit transition-all hover:translate-x-2" href="#quote">
+<span>Cotizar Unidad Completa</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: Especificaciones de la Flota Pesada -->
+<section class="py-24 bg-surface px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-gutter">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Especificaciones de la Flota Pesada</h2>
+<div class="w-24 h-1.5 bg-secondary"></div>
+</div>
+<p class="font-body-md text-body-md text-outline max-w-md">
+                    Diseñamos soluciones a medida con vehículos de última generación, optimizados para el rendimiento y la seguridad.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Card 1: Furgones -->
+<div class="group bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="h-80 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional white logistics truck with a closed box trailer, ANGER branding visible, driving along a scenic coastal highway during golden hour. The lighting is warm and dramatic, highlighting the high-quality finish of the vehicle. Corporate logistics style, sharp focus, clean composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsSRZAFqrwc2jnIrU4NYd9zT0HGm-FEZo-3x__ET7wvgirW4NAU3gXn645d3omSoApluEkcvlSV2xR9lXMwaMNYsAgSNsX-C5p1sL5CZRYWdvwmr1QvoXtvli4IG04e8KZ5xJYqiK7Am8C-LX6S-xbnRl4BIs5UxxZlMoF0qP6x2CN45u7uVIkLrQQPPu-xc-UJb4rIZOQzQSU5SIub4Na68a0z8GROt6Pg8CkqzoMI94mwzGVtm_0GZXHEGEUoO5thO25CDdT4d4_"/>
+<div class="absolute top-4 left-4 bg-primary text-white px-4 py-2 font-label-md text-label-md rounded">CONSUMO MASIVO &amp; RETAIL</div>
+</div>
+<div class="p-10 flex-1 border-l-[6px] border-transparent group-hover:border-secondary transition-all">
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Furgones Cerrados de 15 a 30 TN</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                            Unidades herméticas ideales para consumo masivo, retail y carga seca farmacéutica. Capacidades volumétricas optimizadas de 50 a 90 m³ que maximizan el factor de estiba en carga paletizada.
+                        </p>
+<ul class="space-y-3 font-label-md text-label-md text-primary">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                                Control de sellos de seguridad
+                            </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                                Interiores revestidos para protección
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Card 2: Plataformas -->
+<div class="group bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="h-80 overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLtyys-z4Jg1CZSYHK4nnCJsQCXcJEqYhxyYE3OHfSb6jTGZ5l4dHaKYMQWeQGyBC8lVjQfG0NtWaSdGgaLUA1jwOrT3Wba-1bkMtkUYywrmcwN3CRxGu3r1cQnqA07lcwv7ys1vhfq_sd1GBejHljhfV9bvSoEQbnvg7gQdCqlCWHWgYvCkN_gi3DPUfrgPIlsTj7fayNgA40Wc9WKoMrGkPJyuwB_qvXnSt8NKcHNRzO08EqG1zhv5B25k"/>
+<div class="absolute top-4 left-4 bg-primary text-white px-4 py-2 font-label-md text-label-md rounded">INDUSTRIAL &amp; MINERÍA</div>
+</div>
+<div class="p-10 flex-1 border-l-[6px] border-transparent group-hover:border-secondary transition-all">
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Unidades Tipo Plataforma de 30 TN</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                            Vehículos pesados configurados para el traslado seguro de maquinaria industrial, componentes mineros, estructuras metálicas y suministros pesados en rutas de alta exigencia geográfica.
+                        </p>
+<ul class="space-y-3 font-label-md text-label-md text-primary">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                                Sistemas de trincado de alta resistencia
+                            </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                                Chasis reforzado para rutas críticas
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Protocolos de Seguridad y Homologación -->
+<section class="bg-primary text-on-primary py-24 relative overflow-hidden">
+<!-- Subtle background pattern/shader -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+<div class="lg:col-span-5">
+<h2 class="font-headline-lg text-headline-lg mb-8 border-l-8 border-secondary pl-6">Protocolos de Seguridad y Homologación</h2>
+<p class="font-body-lg text-body-lg leading-relaxed text-on-primary-container mb-8">
+                        Operamos bajo exigentes estándares corporativos. Toda la flota cuenta con revisiones técnicas vigentes ante el MTC, sistemas de rastreo satelital GPS activo las 24 horas y pólizas de seguro de carga dedicadas.
+                    </p>
+<p class="font-body-md text-body-md opacity-80 mb-10">
+                        Nuestros conductores están capacitados en manejo defensivo y protocolos de ingreso a campamentos y plantas industriales.
+                    </p>
+<div class="grid grid-cols-2 gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-4xl">my_location</span>
+<div class="font-label-md text-label-md">GPS 24/7</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-4xl">verified_user</span>
+<div class="font-label-md text-label-md">CERTIFICACIÓN MTC</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-4xl">shield</span>
+<div class="font-label-md text-label-md">SEGUROS FULL</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-4xl">engineering</span>
+<div class="font-label-md text-label-md">MANEJO DEFENSIVO</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+<img class="w-full h-96 object-cover brightness-90 group-hover:scale-105 transition-transform duration-700" data-alt="A clean, high-tech logistics control center dashboard showing GPS tracking maps on multiple large monitors. Professional dispatchers are visible in the background, out of focus. The scene is lit with cool blue and white tones, creating a sense of precision and advanced technology. Professional corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQuq32FcTw61Fr-V3m7Xjlm5cfDo1JaisAk_djAnS7dvLUNuBsyYWDgPbGPthmswsxgXsya3VMIe-uo0Ts0SRcc408e4R2x4-cwTS5pPcE06_ta-auHWHZLr-DXlGOIjmxI2tqwBt50LOjXe2QQacYVjJQFHK5KZ5dbDNQ2R2eHdjNdKnYGoqOrUGKgWZN3OnrL2gBZpE00CG3RLPojZ6ZuSJDe0z9RgRQDqNu668hX10o9IV_RWeZvacIRxDfEmJjmwgIJG3azq4K"/>
+<div class="absolute inset-0 bg-secondary/10 flex items-center justify-center">
+<button class="w-20 h-20 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
+<span class="font-label-sm text-label-sm uppercase tracking-tighter text-secondary">MONITOREO EN TIEMPO REAL</span>
+<div class="font-body-sm text-body-sm text-white">Centro de Control Operativo - Vigilancia permanente de cada ruta.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action Section -->
+<section class="py-24 px-margin-desktop bg-surface-container-low" id="quote">
+<div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-outline-variant p-12 text-center relative overflow-hidden">
+<!-- Red accent corner -->
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary transform rotate-45 translate-x-12 -translate-y-12"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">¿Listo para mover su carga con exclusividad?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+                    Obtenga una cotización personalizada para su operación industrial o comercial hoy mismo.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<a class="bg-secondary text-white font-bold px-12 py-5 rounded shadow-lg hover:bg-red-700 transition-all text-body-md font-body-md" href="#">
+                        Cotizar Unidad Completa
+                    </a>
+<a class="flex items-center gap-2 font-bold text-primary hover:text-secondary transition-colors text-body-md font-body-md" href="tel:+51900000000">
+<span class="material-symbols-outlined">call</span>
+                        Hablar con un asesor
+                    </a>
+</div>
+<div class="mt-16 pt-8 border-t border-outline-variant flex flex-wrap justify-center gap-gutter opacity-60">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined">description</span> <span class="font-label-md text-label-md">Rápida facturación</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined">schedule</span> <span class="font-label-md text-label-md">Disponibilidad 24/7</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined">language</span> <span class="font-label-md text-label-md">Cobertura Nacional</span></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary">
+<div class="w-full py-margin-desktop px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-headline-sm font-headline-sm font-bold text-on-primary">
+                    ANGER Operador Logístico
+                </div>
+<p class="font-body-sm text-body-sm opacity-70">© 2024 ANGER Operador Logístico. Todos los derechos reservados.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-md text-label-md text-primary-fixed-dim hover:text-white transition-colors" href="#">Privacidad</a>
+<a class="font-label-md text-label-md text-primary-fixed-dim hover:text-white transition-colors" href="#">Términos y Condiciones</a>
+<a class="font-label-md text-label-md text-primary-fixed-dim hover:text-white transition-colors" href="#">Soporte</a>
+<a class="font-label-md text-label-md text-primary-fixed-dim hover:text-white transition-colors" href="#">Certificaciones</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and subtle scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            // Select elements to animate on scroll
+            document.querySelectorAll('section > div').forEach(el => {
+                el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>

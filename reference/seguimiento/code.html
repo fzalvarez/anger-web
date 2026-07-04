@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Seguimiento de Envíos | ANGER OPERADOR LOGÍSTICO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9ff;
+            color: #0f1c2d;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(228, 231, 236, 0.5);
+        }
+        .tracking-gradient {
+            background: linear-gradient(135deg, #021356 0%, #1d2b6b 100%);
+        }
+        .step-active::after {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: #bc0100;
+            z-index: 1;
+        }
+        @media (min-width: 768px) {
+            .step-active::after {
+                top: 50%;
+                left: 2rem;
+                width: calc(100% - 2rem);
+                height: 2px;
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#243143",
+                      "inverse-primary": "#b9c3ff",
+                      "secondary-fixed-dim": "#ffb4a8",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#191c1e",
+                      "surface": "#f8f9ff",
+                      "primary-fixed": "#dee1ff",
+                      "on-background": "#0f1c2d",
+                      "tertiary": "#191c1f",
+                      "secondary-container": "#ea0703",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#b9c3ff",
+                      "outline-variant": "#c6c5d2",
+                      "tertiary-fixed": "#e0e3e6",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-variant": "#d6e3fb",
+                      "primary": "#021356",
+                      "on-surface-variant": "#454650",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#96999c",
+                      "on-secondary-container": "#fffbff",
+                      "surface-container": "#e6eeff",
+                      "surface-container-high": "#dce9ff",
+                      "secondary": "#bc0100",
+                      "on-surface": "#0f1c2d",
+                      "surface-container-highest": "#d6e3fb",
+                      "surface-dim": "#cddbf2",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#44474a",
+                      "secondary-fixed": "#ffdad4",
+                      "on-primary-fixed": "#021356",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#f8f9ff",
+                      "on-primary": "#ffffff",
+                      "outline": "#767681",
+                      "background": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#930100",
+                      "surface-container-low": "#eff4ff",
+                      "surface-tint": "#4d5a9c",
+                      "on-primary-fixed-variant": "#354282",
+                      "on-secondary-fixed": "#410000",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#8895db",
+                      "primary-container": "#1d2b6b",
+                      "tertiary-fixed-dim": "#c4c7ca",
+                      "tertiary-container": "#2e3134"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "container-max": "1440px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "32px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-md": ["Montserrat"],
+                      "headline-md": ["Montserrat"],
+                      "body-sm": ["Montserrat"],
+                      "body-md": ["Montserrat"],
+                      "label-sm": ["Montserrat"],
+                      "body-lg": ["Montserrat"],
+                      "headline-lg": ["Montserrat"],
+                      "headline-sm": ["Montserrat"],
+                      "headline-lg-mobile": ["Montserrat"]
+              },
+              "fontSize": {
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-primary border-b border-outline-variant dark:border-primary-container docked full-width top-0 sticky z-50 transition-all duration-300 shadow-sm">
+<nav class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-2">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-on-primary">ANGER</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant font-label-bold text-label-bold hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Inicio</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-bold text-label-bold hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Nosotros</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-bold text-label-bold hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Servicios</a>
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary pb-1 font-label-bold text-label-bold transition-colors" href="#">Seguimiento</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-bold text-label-bold hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Contáctanos</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 font-label-bold text-label-bold rounded-lg hover:opacity-90 transition-opacity">
+                    Cotizar Envío
+                </button>
+</div>
+</nav>
+</header>
+<main class="min-h-screen">
+<!-- Section 1: Hero Section -->
+<section class="relative pt-16 pb-12 overflow-hidden">
+
+<div class="max-w-4xl mx-auto px-margin-mobile text-center relative z-10">
+<h1 class="font-headline-lg text-headline-lg mb-4 text-primary">Seguimiento de Envíos y Carga Nacional</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Consulta el estado actual y la ubicación de tu mercancía en tiempo real.</p>
+<div class="flex flex-col md:flex-row gap-4 p-2 bg-white rounded-xl shadow-xl border border-outline-variant max-w-3xl mx-auto group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="flex-grow flex items-center px-4">
+<span class="material-symbols-outlined text-outline mr-3">search</span>
+<input class="w-full border-none focus:ring-0 font-body-md text-body-md bg-transparent placeholder-outline" id="tracking-input" placeholder="Ingresa el número de guía de remisión o código de tracking..." type="text"/>
+</div>
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-label-bold text-label-bold hover:opacity-90 active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2" id="search-btn">
+<span>Consultar Estado</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 2: Contingency Card -->
+<section class="py-6 px-margin-mobile">
+<div class="max-w-4xl mx-auto">
+<div class="bg-surface-container-low border-l-4 border-secondary rounded-xl p-6 md:p-8 shadow-sm">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-3xl">info</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-3">Canales de Consulta Directa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                                Currently nos encontramos digitalizando e integrando de forma automatizada nuestros sistemas de seguimiento en ruta. Si deseas conocer el estado exacto, ubicación actual o confirmación de entrega de tu carga en este momento, por favor utiliza nuestros canales directos de atención inmediata:
+                            </p>
+<div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+<div class="flex items-start gap-3 p-3 hover:bg-white rounded-lg transition-colors">
+<span class="font-bold text-primary">1.</span>
+<p class="font-body-sm text-body-sm"><span class="font-bold">Ejecutivo Asignado:</span> Comunícate directamente con el Ejecutivo Comercial asignado al soporte operativo y documentario de tu cuenta.</p>
+</div>
+<div class="flex items-start gap-3 p-3 hover:bg-white rounded-lg transition-colors">
+<span class="font-bold text-primary">2.</span>
+<p class="font-body-sm text-body-sm"><span class="font-bold">Central de Operaciones:</span> Llama a nuestra línea dedicada centralizada al <a class="text-secondary font-bold hover:underline" href="tel:013653968">(01) 365 3968</a>.</p>
+</div>
+<div class="flex items-start gap-3 p-3 hover:bg-white rounded-lg transition-colors">
+<span class="font-bold text-primary">3.</span>
+<p class="font-body-sm text-body-sm"><span class="font-bold">Correo de Atención:</span> Envía el número de guía de remisión al correo <a class="text-secondary font-bold hover:underline" href="mailto:atencionalcliente@angerperu.com">atencionalcliente@angerperu.com</a> para recibir una actualización detallada de tu despacho.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Interactive Mockup -->
+<section class="py-12 px-margin-mobile" id="results-section">
+<div class="max-w-5xl mx-auto">
+<div class="bg-white rounded-2xl shadow-2xl border border-outline-variant overflow-hidden">
+<!-- Result Header -->
+<div class="tracking-gradient p-8 text-on-primary">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<span class="text-xs uppercase tracking-widest opacity-80 font-bold">Estado del Envío</span>
+<h3 class="font-headline-md text-headline-md mt-1">Guía de Remisión: GR-2026-XXXX <span class="text-sm opacity-60 font-normal ml-2">(Simulación)</span></h3>
+</div>
+<div class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 flex items-center gap-2">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</span>
+<span class="font-label-md text-label-md">EN TRÁNSITO</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 pt-8 border-t border-white/10">
+<div>
+<p class="text-xs opacity-70 uppercase font-bold">Servicio</p>
+<p class="font-label-bold text-label-bold mt-1">ANGER EXCLUSIVO</p>
+</div>
+<div>
+<p class="text-xs opacity-70 uppercase font-bold">Destino</p>
+<p class="font-label-bold text-label-bold mt-1">Chiclayo, Lambayeque</p>
+</div>
+<div>
+<p class="text-xs opacity-70 uppercase font-bold">Cliente</p>
+<p class="font-label-bold text-label-bold mt-1">Corporativo XYZ</p>
+</div>
+<div>
+<p class="text-xs opacity-70 uppercase font-bold">Est. Entrega</p>
+<p class="font-label-bold text-label-bold mt-1">24 Oct, 2024</p>
+</div>
+</div>
+</div>
+<!-- Timeline Content -->
+<div class="p-8 md:p-12">
+<div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-4">
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center w-full md:w-1/4">
+<div class="w-12 h-12 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-lg mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+</div>
+<h4 class="font-label-bold text-label-bold text-primary">Recojo de Mercancía</h4>
+<p class="text-[11px] text-on-surface-variant mt-2 leading-tight">Carga estibada y validada en almacén de origen.</p>
+<p class="text-[10px] font-bold text-secondary mt-1">22 OCT - 09:15 AM</p>
+</div>
+<!-- Connector Horizontal 1 -->
+<div class="hidden md:block absolute top-6 left-[12.5%] right-[62.5%] h-1 bg-secondary z-0"></div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center w-full md:w-1/4">
+<div class="w-12 h-12 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-lg mb-4 ring-8 ring-secondary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<h4 class="font-label-bold text-label-bold text-primary">En Tránsito</h4>
+<p class="text-[11px] text-on-surface-variant mt-2 leading-tight">Unidad en ruta nacional bajo monitoreo satelital GPS activo.</p>
+<p class="text-[10px] font-bold text-secondary mt-1">EN PROCESO</p>
+</div>
+<!-- Connector Horizontal 2 (Dashed) -->
+<div class="hidden md:block absolute top-6 left-[37.5%] right-[37.5%] h-1 border-t-4 border-dashed border-outline-variant z-0"></div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center w-full md:w-1/4 opacity-40">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">warehouse</span>
+</div>
+<h4 class="font-label-bold text-label-bold text-on-surface-variant">Llegada a Destino</h4>
+<p class="text-[11px] text-on-surface-variant mt-2 leading-tight">Ingreso a Centro de Distribución / Almacén principal.</p>
+<p class="text-[10px] font-bold text-on-surface-variant mt-1">PENDIENTE</p>
+</div>
+<!-- Connector Horizontal 3 (Dashed) -->
+<div class="hidden md:block absolute top-6 left-[62.5%] right-[12.5%] h-1 border-t-4 border-dashed border-outline-variant z-0"></div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center text-center w-full md:w-1/4 opacity-40">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h4 class="font-label-bold text-label-bold text-on-surface-variant">Entrega Confirmada</h4>
+<p class="text-[11px] text-on-surface-variant mt-2 leading-tight">Guía firmada y conformidad reportada al cliente.</p>
+<p class="text-[10px] font-bold text-on-surface-variant mt-1">PENDIENTE</p>
+</div>
+</div>
+</div>
+<!-- Map/Live Location Visualizer -->
+<div class="bg-surface h-80 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A sophisticated digital map visualization showing a truck route across a simplified topographical terrain of Peru. The map uses a corporate navy and gray palette, with a highlighted red glowing path from Lima to Chiclayo. A small blue pulsing dot represents the real-time position of the logistics vehicle. High-fidelity UI elements like coordinates and speed metrics are overlaid in a clean, minimalist style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjFlhb7Kj6UUgquHRe6TBOHUTYubmrd9DOpgyFHnjdrPOqkGzMQtDzxMygGD97Wx1CYz4a1zv9r9lQl3BpbzRs-HhpmO_JSB9M_SkDddwy5XDgdy6fhK3V_af6ihKkcqyzWfgcwzZYfuEaYa3_E44pBJR943EG0zFiLs6HkVVVTiiIS2Z_SCtTecpHkcicPbpu-Y7palxllBRN09tzTVr1O8qpeDpYzAV16hiV5PIC_bqt6RsZlVIYbQMOUggITWJsnFioYoW_q61m')"></div>
+<div class="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row gap-4">
+<div class="bg-white p-4 rounded-lg shadow-xl border border-outline-variant flex items-center gap-4 flex-1 max-w-sm">
+<div class="p-3 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider">Última Ubicación Conocida</p>
+<p class="font-label-bold text-label-bold text-primary">Km 540 Panamericana Norte, Virú</p>
+</div>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-xl border border-outline-variant flex items-center gap-4 flex-1 max-w-sm">
+<div class="p-3 bg-secondary/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary">speed</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider">Velocidad Promedio</p>
+<p class="font-label-bold text-label-bold text-primary">78 km/h</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Contact CTA -->
+<section class="py-20 bg-primary-container text-on-primary-container">
+<div class="max-w-container-max mx-auto px-margin-desktop grid md:grid-cols-2 items-center gap-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6">¿Necesitas soporte especializado para tu carga?</h2>
+<p class="font-body-lg text-body-lg opacity-80 mb-8">Nuestros expertos logísticos están listos para brindarte la mejor solución en transporte y distribución a nivel nacional.</p>
+<div class="flex gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-label-bold text-label-bold hover:opacity-90 transition-all shadow-lg">Solicitar Cotización</button>
+<button class="border border-on-primary-container text-on-primary-container px-8 py-4 rounded-lg font-label-bold text-label-bold hover:bg-white/10 transition-all">Saber más</button>
+</div>
+</div>
+<div class="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A professional warehouse environment with high-density shelving and bright, clean lighting. A logistics manager in a high-visibility vest is inspecting a shipment using a digital tablet. The scene is shot from a low angle, emphasizing the scale and efficiency of the operation. Corporate modern photography style with cool tones and sharp focus." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYhmNAU4FPXja06YSF8e2rS26PTsn4YjiuHUxSUoOhaiAg1LDiLfndOoe4AOboyH0buEGKGq__xzduzw6ul70r3W0FZCAjxVg7Gf1UaYrUL0O17KouKfntSIl9wPhdt0YE5VNWu6uC77wHMJ9QcmRXWE_Idf2iiiQMjrU4iWI0VYefOe-I9qGu0OO8dMgvuaGe_PfluT8SRL2cUySma-60njtW8EVjmcFH1uibBMO7V5KUfTLCTlaMAzHsCGLBnhSxdiuXpPq4n8i-')"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto py-16">
+<div class="space-y-6">
+<span class="text-headline-md font-headline-md font-bold text-on-primary">ANGER</span>
+<p class="font-body-md text-body-md opacity-80 max-w-xs">Soluciones logísticas integrales con los más altos estándares de seguridad y eficiencia en el mercado peruano.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-bold text-label-bold uppercase tracking-widest text-on-primary">Enlaces Rápidos</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-surface-variant opacity-80 hover:text-on-tertiary-container transition-colors" href="#">Inicio</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-on-tertiary-container transition-colors" href="#">Nosotros</a></li>
+<li><a class="text-surface-variant opacity-80 hover:text-on-tertiary-container transition-colors" href="#">Servicios</a></li>
+<li><a class="text-on-primary font-bold" href="#">Seguimiento de Carga</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-bold text-label-bold uppercase tracking-widest text-on-primary">Contacto</h4>
+<ul class="space-y-4 font-body-md text-body-md">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="opacity-80">Av. Las Industrias 123, Lima, Perú</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">call</span>
+<span class="opacity-80">(01) 365 3968</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">mail</span>
+<span class="opacity-80">atencionalcliente@angerperu.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/10 py-8 px-margin-desktop">
+<div class="max-w-container-max mx-auto flex flex-col md:row justify-between items-center gap-4 text-center md:text-left">
+<p class="font-body-sm text-body-sm opacity-60">© 2024 ANGER OPERADOR LOGÍSTICO. Todos los derechos reservados.</p>
+<div class="flex gap-6 font-label-sm text-label-sm opacity-60">
+<a class="hover:text-on-primary transition-colors" href="#">Política de Privacidad</a>
+<a class="hover:text-on-primary transition-colors" href="#">Términos de Servicio</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for tracking button
+        document.getElementById('search-btn').addEventListener('click', function() {
+            const btn = this;
+            const input = document.getElementById('tracking-input');
+            const resultsSection = document.getElementById('results-section');
+            
+            if (input.value.trim() === "") {
+                input.classList.add('ring-2', 'ring-secondary/50');
+                setTimeout(() => input.classList.remove('ring-2', 'ring-secondary/50'), 2000);
+                return;
+            }
+
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Consultando...';
+            btn.disabled = true;
+            
+            // Scroll to results after a fake delay
+            setTimeout(() => {
+                btn.innerHTML = '<span>Consultar Estado</span>';
+                btn.disabled = false;
+                resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Add a highlight effect to the results
+                const card = resultsSection.querySelector('div');
+                card.classList.add('ring-4', 'ring-secondary/20');
+                setTimeout(() => card.classList.remove('ring-4', 'ring-secondary/20'), 1500);
+            }, 1200);
+        });
+
+        // Sticky header transparency effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body></html>
