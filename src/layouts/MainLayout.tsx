@@ -174,7 +174,7 @@ export default function MainLayout() {
 
         .rounded-lg { border-radius: 0.25rem; }
         .rounded-xl { border-radius: 0.5rem; }
-        .rounded-full { border-radius: 0.75rem; }
+        .rounded-full { border-radius: 9999px; }
 
         @media (max-width: 768px) {
           .px-margin-desktop {

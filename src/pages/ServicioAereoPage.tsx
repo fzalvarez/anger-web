@@ -1,3 +1,6 @@
+import { AppLinkButton } from "../components/common/AppLinkButton";
+import { AppButton } from "../components/common/AppButton";
+
 export default function ServicioAereoPage() {
   return (
     <main className="mt-20 bg-surface text-on-surface overflow-x-hidden">
@@ -13,14 +16,14 @@ export default function ServicioAereoPage() {
 
         <div className="px-margin-desktop max-w-container-max mx-auto relative z-20">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-secondary text-on-primary px-4 py-1 mb-6 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-secondary text-on-secondary px-4 py-1 mb-4 rounded-full">
               <span
                 className="material-symbols-outlined text-sm"
                 style={{ fontVariationSettings: "'FILL' 1" }}
               >
                 bolt
               </span>
-              <span className="font-label-md text-label-md">
+              <span className="font-label-md text-label-md uppercase tracking-wider">
                 ALTA PRIORIDAD NACIONAL
               </span>
             </div>
@@ -29,7 +32,7 @@ export default function ServicioAereoPage() {
               Logística Aérea Nacional para Cargas de Alta Prioridad
             </h1>
 
-            <p className="font-body-lg text-body-lg text-on-primary/90 mb-8">
+            <p className="font-body-lg text-body-lg text-on-primary/80 mb-8">
               La vía más rápida para mitigar quiebres de stock o trasladar
               suministros críticos. Conectamos tus almacenes con las terminales
               aéreas de los principales departamentos del país en tiempos
@@ -37,17 +40,22 @@ export default function ServicioAereoPage() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                className="bg-secondary text-on-primary px-8 py-4 rounded-lg font-label-md hover:bg-secondary-container transition-all active:scale-95 flex items-center gap-2"
-                href="#coordinar"
+              <AppLinkButton
+                className="px-8 py-4"
+                rightIcon={<span className="material-symbols-outlined">arrow_forward</span>}
+                to="#coordinar"
+                variant="secondary"
               >
                 COORDINAR ENVÍO AÉREO URGENTE
-                <span className="material-symbols-outlined">arrow_forward</span>
-              </a>
+              </AppLinkButton>
 
-              <button className="bg-transparent border border-on-primary text-on-primary px-8 py-4 rounded-lg font-label-md hover:bg-on-primary/10 transition-all">
+              <AppButton
+                className="bg-transparent border border-on-primary text-on-primary px-8 py-4 rounded-lg font-label-md hover:bg-on-primary/10 transition-all"
+                type="button"
+                variant="outline"
+              >
                 DESCARGAR PORTAFOLIO
-              </button>
+              </AppButton>
             </div>
           </div>
         </div>
@@ -57,15 +65,15 @@ export default function ServicioAereoPage() {
         <div className="px-margin-desktop max-w-container-max mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl">
-              <span className="text-secondary font-label-md tracking-widest block mb-2">
+              <span className="inline-flex items-center bg-secondary text-on-secondary px-4 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider mb-4">
                 ESPECIFICACIONES TÉCNICAS
               </span>
-              <h2 className="font-headline-lg text-headline-lg text-primary">
+              <h2 className="font-headline-lg text-headline-lg text-primary mb-4">
                 Modalidades de Carga Aérea
               </h2>
             </div>
 
-            <p className="font-body-md text-on-surface-variant max-w-sm">
+            <p className="font-body-md text-body-md text-on-surface-variant max-w-sm">
               Soluciones adaptadas a la criticidad de su mercancía con
               trazabilidad total.
             </p>
@@ -92,7 +100,7 @@ export default function ServicioAereoPage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-surface-container-lowest p-8 border border-outline-variant border-l-4 border-l-transparent hover:border-l-secondary hover:shadow-lg transition-all flex flex-col justify-between group"
+                className="bg-surface-container-lowest rounded-xl shadow-sm p-8 border border-outline-variant border-l-4 border-l-transparent hover:border-l-secondary hover:shadow-lg transition-all flex flex-col justify-between group"
               >
                 <div>
                   <div
@@ -107,11 +115,11 @@ export default function ServicioAereoPage() {
                     </span>
                   </div>
 
-                  <h3 className="font-headline-sm text-headline-sm text-primary mb-4">
+                  <h3 className="font-headline-sm text-headline-sm text-primary mb-3">
                     {item.title}
                   </h3>
 
-                  <p className="font-body-md text-on-surface-variant">
+                  <p className="font-body-md text-body-md text-on-surface-variant">
                     {item.text}
                   </p>
                 </div>
@@ -159,11 +167,11 @@ export default function ServicioAereoPage() {
             </div>
 
             <div className="w-full lg:w-1/2">
-              <span className="text-secondary-fixed font-label-md tracking-widest block mb-4">
+              <span className="inline-flex items-center bg-secondary text-on-secondary px-4 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider mb-4">
                 GESTIÓN DE TERMINALES
               </span>
 
-              <h2 className="font-headline-lg text-headline-lg mb-6">
+              <h2 className="font-headline-lg text-headline-lg mb-4">
                 Soporte en Terminales y Aduana
               </h2>
 
@@ -209,44 +217,44 @@ export default function ServicioAereoPage() {
       </section>
 
       <section
-        className="py-24 bg-surface-container-high border-t border-outline-variant"
+        className="py-20 bg-primary text-on-primary relative overflow-hidden"
         id="coordinar"
       >
-        <div className="px-margin-desktop max-w-container-max mx-auto text-center">
-          <h2 className="font-headline-lg text-headline-lg text-primary mb-4">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary skew-x-12 translate-x-1/2 opacity-20" />
+        <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto text-center">
+          <h2 className="font-headline-lg text-headline-lg mb-4">
             ¿Tiene un embarque crítico hoy?
           </h2>
 
-          <p className="font-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+          <p className="font-body-lg text-body-lg text-on-primary/80 mb-12 max-w-2xl mx-auto">
             Nuestros especialistas en transporte aéreo están listos para
             coordinar su recojo y despacho de inmediato. Actuamos con la
             urgencia que su negocio demanda.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              className="bg-secondary text-on-primary px-10 py-5 rounded-lg font-headline-sm hover:bg-secondary-container transition-all active:scale-95 shadow-lg flex items-center justify-center gap-3"
-              href="/contacto"
+            <AppLinkButton
+              className="px-10 py-5 shadow-lg justify-center"
+              rightIcon={
+                <span className="material-symbols-outlined">rocket_launch</span>
+              }
+              to="/contacto"
+              variant="secondary"
             >
               COORDINAR ENVÍO AÉREO URGENTE
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                rocket_launch
-              </span>
-            </a>
+            </AppLinkButton>
 
-            <a
-              className="bg-primary text-on-primary px-10 py-5 rounded-lg font-headline-sm hover:bg-primary-container transition-all active:scale-95 flex items-center justify-center gap-3"
-              href="tel:013653968"
+            <AppLinkButton
+              className="px-10 py-5 border border-on-primary text-on-primary hover:bg-on-primary/10 justify-center"
+              rightIcon={<span className="material-symbols-outlined">call</span>}
+              to="tel:013653968"
+              variant="outline"
             >
               Llamar a Despacho
-              <span className="material-symbols-outlined">call</span>
-            </a>
+            </AppLinkButton>
           </div>
 
-          <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-8 text-on-surface-variant font-label-md">
+          <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-8 text-on-primary/80 font-label-md">
             {[
               "COBERTURA NACIONAL",
               "MONITOREO EN TIEMPO REAL",

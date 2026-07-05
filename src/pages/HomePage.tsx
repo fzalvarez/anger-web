@@ -1,3 +1,6 @@
+import { AppButton } from "../components/common/AppButton";
+import { AppLinkButton } from "../components/common/AppLinkButton";
+
 export default function HomePage() {
   return (
     <main className="mt-20">
@@ -12,7 +15,7 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto text-on-primary">
           <div className="max-w-2xl">
-            <span className="bg-secondary text-white px-4 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider mb-6 inline-block">
+            <span className="bg-secondary text-on-secondary px-4 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider mb-4 inline-block">
               Soluciones de Transporte 360°
             </span>
             <h1 className="font-headline-lg text-headline-lg mb-6 leading-tight">
@@ -21,27 +24,36 @@ export default function HomePage() {
                 Transporte y Distribución Nacional Segura
               </span>
             </h1>
-            <p className="font-body-lg text-body-lg mb-8 opacity-90">
+            <p className="font-body-lg text-body-lg mb-8 text-on-primary/80">
               Optimizamos su cadena de suministro con tecnología de punta y una
               flota de vanguardia para garantizar entregas precisas en todo el
               territorio peruano.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-secondary hover:bg-secondary-container text-white px-8 py-4 rounded-lg font-bold transition-cubic hover:shadow-xl active:scale-95">
+              <AppButton
+                className="px-8 py-4 rounded-lg font-bold transition-cubic hover:shadow-lg active:scale-95"
+                type="button"
+                variant="secondary"
+              >
                 Nuestros Servicios
-              </button>
-              <button className="bg-white/10 backdrop-blur-md border-2 border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold transition-cubic">
+              </AppButton>
+              <AppButton
+                className="bg-white/10 backdrop-blur-md border-2 border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold transition-cubic"
+                type="button"
+                variant="outline"
+                size="lg"
+              >
                 Ver Cobertura
-              </button>
+              </AppButton>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-margin-desktop bg-surface">
+      <section className="py-20 bg-surface">
         <div className="px-margin-desktop max-w-container-max mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            <div className="bg-white border border-outline-variant p-8 rounded-xl transition-cubic hover:border-secondary hover:shadow-lg group">
+            <div className="bg-white border border-outline-variant p-8 rounded-xl shadow-sm transition-cubic hover:border-secondary hover:shadow-lg group">
               <div className="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <span
                   className="material-symbols-outlined text-primary group-hover:text-white"
@@ -59,7 +71,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="bg-white border border-outline-variant p-8 rounded-xl transition-cubic hover:border-secondary hover:shadow-lg group">
+            <div className="bg-white border border-outline-variant p-8 rounded-xl shadow-sm transition-cubic hover:border-secondary hover:shadow-lg group">
               <div className="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <span
                   className="material-symbols-outlined text-primary group-hover:text-white"
@@ -77,7 +89,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="bg-white border border-outline-variant p-8 rounded-xl transition-cubic hover:border-secondary hover:shadow-lg group">
+            <div className="bg-white border border-outline-variant p-8 rounded-xl shadow-sm transition-cubic hover:border-secondary hover:shadow-lg group">
               <div className="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <span
                   className="material-symbols-outlined text-primary group-hover:text-white"
@@ -98,14 +110,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-margin-desktop bg-primary text-on-primary">
+      <section className="py-20 bg-primary text-on-primary">
         <div className="px-margin-desktop max-w-container-max mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <h2 className="font-headline-lg text-headline-lg mb-4">
                 Soluciones por Sector
               </h2>
-              <p className="text-primary-fixed-dim max-w-xl">
+              <p className="font-body-lg text-body-lg text-on-primary/80 max-w-xl">
                 Experiencia especializada en el manejo de mercancía crítica para
                 diversas industrias peruanas.
               </p>
@@ -207,21 +219,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-margin-desktop bg-surface-container-low">
+      <section className="py-20 bg-surface-container-low">
         <div className="px-margin-desktop max-w-container-max mx-auto text-center mb-16">
           <h2 className="font-headline-lg text-headline-lg text-primary mb-4">
             Nuestros Servicios Principales
           </h2>
-          <p className="text-on-surface-variant max-w-2xl mx-auto">
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
             Modelos de transporte diseñados para ajustarse a los requerimientos
             de tiempo y presupuesto de su empresa.
           </p>
         </div>
 
         <div className="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          <div className="bg-white rounded-2xl p-1 shadow-sm border border-outline-variant hover:shadow-2xl transition-cubic overflow-hidden">
+          <div className="bg-white rounded-xl p-1 shadow-sm border border-outline-variant hover:shadow-lg transition-cubic overflow-hidden">
             <div className="bg-primary text-on-primary p-4 text-center skew-bg ml-[-1px]">
-              <h3 className="font-bold text-lg">ANGER EXPRESS</h3>
+              <h3 className="font-headline-sm text-headline-sm">ANGER EXPRESS</h3>
             </div>
             <div className="p-8 text-center">
               <span className="material-symbols-outlined text-5xl text-secondary mb-6">
@@ -231,18 +243,20 @@ export default function HomePage() {
                 Entregas ultra-rápidas en Lima Metropolitana y principales
                 provincias para mercancía de alta prioridad.
               </p>
-              <a
-                className="inline-flex w-full justify-center border-2 border-primary text-primary font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-colors"
-                href="/servicios"
+              <AppLinkButton
+                className="h-auto py-3"
+                fullWidth
+                to="/servicios"
+                variant="outline"
               >
                 Saber más
-              </a>
+              </AppLinkButton>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-1 shadow-sm border border-outline-variant hover:shadow-2xl transition-cubic overflow-hidden relative transform md:-translate-y-4">
+          <div className="bg-white rounded-xl p-1 shadow-sm border border-outline-variant hover:shadow-lg transition-cubic overflow-hidden relative transform md:-translate-y-4">
             <div className="bg-secondary text-on-primary p-4 text-center skew-bg ml-[-1px]">
-              <h3 className="font-bold text-lg">EXCLUSIVO</h3>
+              <h3 className="font-headline-sm text-headline-sm">EXCLUSIVO</h3>
             </div>
             <div className="p-8 text-center">
               <span className="material-symbols-outlined text-5xl text-secondary mb-6">
@@ -252,18 +266,20 @@ export default function HomePage() {
                 Unidades dedicadas únicamente a su carga. Sin paradas
                 intermedias ni consolidación. Máxima seguridad.
               </p>
-              <a
-                className="inline-flex w-full justify-center bg-primary text-white font-bold py-3 rounded-lg hover:bg-primary-container transition-colors shadow-lg"
-                href="/servicios/exclusivo"
+              <AppLinkButton
+                className="h-auto py-3 shadow-lg"
+                fullWidth
+                to="/servicios/exclusivo"
+                variant="primary"
               >
                 Saber más
-              </a>
+              </AppLinkButton>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-1 shadow-sm border border-outline-variant hover:shadow-2xl transition-cubic overflow-hidden">
+          <div className="bg-white rounded-xl p-1 shadow-sm border border-outline-variant hover:shadow-lg transition-cubic overflow-hidden">
             <div className="bg-primary text-on-primary p-4 text-center skew-bg ml-[-1px]">
-              <h3 className="font-bold text-lg">AÉREO</h3>
+              <h3 className="font-headline-sm text-headline-sm">AÉREO</h3>
             </div>
             <div className="p-8 text-center">
               <span className="material-symbols-outlined text-5xl text-secondary mb-6">
@@ -273,21 +289,23 @@ export default function HomePage() {
                 Conexión directa con las principales aerolíneas para traslados
                 urgentes que no pueden esperar el transporte terrestre.
               </p>
-              <a
-                className="inline-flex w-full justify-center border-2 border-primary text-primary font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-colors"
-                href="/servicios/aereo"
+              <AppLinkButton
+                className="h-auto py-3"
+                fullWidth
+                to="/servicios/aereo"
+                variant="outline"
               >
                 Saber más
-              </a>
+              </AppLinkButton>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-margin-desktop bg-white overflow-hidden">
+      <section className="py-20 bg-white overflow-hidden">
         <div className="px-margin-desktop max-w-container-max mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="flex-1">
-            <h2 className="font-headline-lg text-headline-lg text-primary mb-6">
+            <h2 className="font-headline-lg text-headline-lg text-primary mb-4">
               Cobertura Nacional Estratégica
             </h2>
             <p className="text-on-surface-variant font-body-lg text-body-lg mb-8 leading-relaxed">
@@ -325,7 +343,7 @@ export default function HomePage() {
           </div>
 
           <div className="flex-1 w-full relative">
-            <div className="aspect-square bg-surface-container rounded-3xl overflow-hidden shadow-inner border border-outline-variant">
+            <div className="aspect-square bg-surface-container rounded-xl overflow-hidden shadow-inner border border-outline-variant">
               <img
                 alt="Cobertura nacional en Perú"
                 className="w-full h-full object-cover grayscale opacity-50"
@@ -352,20 +370,26 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-primary"></div>
         <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary skew-x-12 translate-x-1/2 opacity-20"></div>
         <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto text-center">
-          <h2 className="font-headline-lg text-headline-lg text-white mb-8">
+          <h2 className="font-headline-lg text-headline-lg text-on-primary mb-8">
             ¿Listo para optimizar los tiempos de tu cadena logística?
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <button className="bg-secondary text-white px-10 py-5 rounded-lg font-bold text-lg hover:shadow-[0_0_30px_rgba(188,1,0,0.4)] transition-cubic active:scale-95">
-              Cotizar mi Proyecto Ahora
-            </button>
-            <a
-              className="flex items-center gap-3 text-white hover:text-secondary transition-colors font-bold text-lg"
-              href="tel:+511234567"
+            <AppButton
+              className="px-10 py-5 text-lg hover:shadow-lg transition-cubic"
+              type="button"
+              variant="secondary"
             >
-              <span className="material-symbols-outlined">phone_in_talk</span>
+              Cotizar mi Proyecto Ahora
+            </AppButton>
+            <AppLinkButton
+              className="bg-transparent p-0 h-auto shadow-none rounded-none text-white hover:bg-transparent hover:text-secondary transition-colors font-bold text-lg flex items-center gap-3"
+              leftIcon={<span className="material-symbols-outlined">phone_in_talk</span>}
+              to="tel:+511234567"
+              variant="ghost"
+              size="sm"
+            >
               Contactar a un Asesor
-            </a>
+            </AppLinkButton>
           </div>
         </div>
       </section>

@@ -1,7 +1,9 @@
+import { AppButton } from "../components/common/AppButton";
+
 export default function NosotrosPage() {
   return (
     <main className="mt-20">
-      <section className="py-20 md:py-32 px-margin-desktop max-w-container-max mx-auto">
+      <section className="py-20 px-margin-desktop max-w-container-max mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
           <div className="space-y-6">
             <h1 className="font-headline-lg text-headline-lg text-primary leading-tight">
@@ -33,7 +35,7 @@ export default function NosotrosPage() {
       <section className="bg-surface-container-low py-20 px-margin-desktop">
         <div className="max-w-container-max mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-            <div className="bg-surface p-12 border border-outline-variant hover:border-secondary transition-all duration-300 group shadow-sm">
+            <div className="bg-surface p-12 rounded-xl border border-outline-variant hover:border-secondary hover:shadow-lg transition-all duration-300 group shadow-sm">
               <div className="flex items-center gap-4 mb-6">
                 <span className="material-symbols-outlined text-4xl text-primary group-hover:text-secondary transition-colors">
                   flag
@@ -50,7 +52,7 @@ export default function NosotrosPage() {
               </p>
             </div>
 
-            <div className="bg-surface p-12 border border-outline-variant hover:border-secondary transition-all duration-300 group shadow-sm">
+            <div className="bg-surface p-12 rounded-xl border border-outline-variant hover:border-secondary hover:shadow-lg transition-all duration-300 group shadow-sm">
               <div className="flex items-center gap-4 mb-6">
                 <span className="material-symbols-outlined text-4xl text-primary group-hover:text-secondary transition-colors">
                   visibility
@@ -70,12 +72,12 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      <section className="py-24 px-margin-desktop max-w-container-max mx-auto">
+      <section className="py-20 px-margin-desktop max-w-container-max mx-auto">
         <div className="text-center mb-16">
-          <span className="font-label-md text-label-md text-secondary tracking-widest">
+          <span className="inline-flex items-center bg-secondary text-on-secondary px-4 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider mb-4">
             NUESTROS VALORES
           </span>
-          <h2 className="font-headline-lg text-headline-lg text-primary mt-4">
+          <h2 className="font-headline-lg text-headline-lg text-primary">
             Compromiso con la Precisión
           </h2>
         </div>
@@ -168,19 +170,24 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-primary text-on-primary">
-        <div className="px-margin-desktop max-w-container-max mx-auto text-center space-y-8">
+      <section className="py-20 bg-primary text-on-primary relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary skew-x-12 translate-x-1/2 opacity-20" />
+        <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto text-center space-y-8">
           <h2 className="font-headline-lg text-headline-lg">
             Conoce nuestras soluciones de transporte nacional
           </h2>
-          <p className="font-body-lg text-body-lg text-primary-fixed-dim max-w-2xl mx-auto">
+          <p className="font-body-lg text-body-lg text-on-primary/80 max-w-2xl mx-auto">
             Optimice sus operaciones con el respaldo técnico de un operador
             logístico de primer nivel.
           </p>
           <div className="pt-4">
-            <button className="bg-secondary text-white px-10 py-4 font-headline-sm text-headline-sm font-bold shadow-lg active:scale-95 transition-all hover:opacity-90">
+            <AppButton
+              className="px-10 py-4 shadow-lg hover:opacity-90"
+              type="button"
+              variant="secondary"
+            >
               Explorar Nuestros Servicios
-            </button>
+            </AppButton>
           </div>
         </div>
       </section>

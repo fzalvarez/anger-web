@@ -1,4 +1,5 @@
 ﻿import { NavLink } from "react-router-dom";
+import { AppButton } from "../components/common/AppButton";
 
 const NAV_ACTIVE =
   "text-secondary font-bold border-b-2 border-secondary pb-1 font-label-md text-label-md transition-colors";
@@ -61,9 +62,13 @@ export default function Header() {
           <NavLink end className={({ isActive }) => (isActive ? NAV_ACTIVE : NAV_DEFAULT)} to="/contacto">
             Contáctanos
           </NavLink>
-          <button className="bg-primary hover:bg-primary-container text-on-primary font-bold px-6 py-2 rounded-lg transition-transform active:scale-95 duration-150 font-label-md text-label-md">
+          <AppButton
+            className="px-6 py-2 font-label-md text-label-md"
+            type="button"
+            variant="primary"
+          >
             Cotizar Envío
-          </button>
+          </AppButton>
         </div>
         <button className="md:hidden text-primary" type="button">
           <span className="material-symbols-outlined">menu</span>

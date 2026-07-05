@@ -1,3 +1,5 @@
+import { AppLinkButton } from "../components/common/AppLinkButton";
+
 export default function ServicioExclusivoPage() {
   return (
     <main className="mt-20 bg-background text-on-surface">
@@ -13,36 +15,37 @@ export default function ServicioExclusivoPage() {
 
         <div className="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto py-20">
           <div className="max-w-4xl space-y-6">
-            <span className="inline-block bg-secondary text-on-secondary px-4 py-1 font-label-md text-label-md tracking-widest uppercase rounded-sm">
+            <span className="inline-block bg-secondary text-on-secondary px-4 py-1 font-label-md text-label-md tracking-wider uppercase rounded-full">
               ANGER EXCLUSIVO
             </span>
 
-            <h1 className="font-headline-lg text-headline-lg text-white leading-tight">
+            <h1 className="font-headline-lg text-headline-lg text-on-primary leading-tight">
               Transporte de Carga en Unidades Completas y Dedicadas
               <br />
               Furgones y Plataformas
             </h1>
 
-            <p className="font-body-lg text-body-lg text-on-primary-container max-w-2xl">
+            <p className="font-body-lg text-body-lg text-on-primary/80 max-w-2xl">
               Soluciones de transporte exclusivo a nivel nacional para
               operaciones logísticas industriales, farmacéuticas y mineras de
               alta envergadura.
             </p>
 
             <div className="pt-8">
-              <a
-                className="bg-secondary hover:bg-red-700 text-white font-bold px-10 py-4 rounded-lg shadow-lg flex items-center gap-3 w-fit transition-all hover:translate-x-2"
-                href="#quote"
+              <AppLinkButton
+                className="px-10 py-4 shadow-lg w-fit"
+                rightIcon={<span className="material-symbols-outlined">arrow_forward</span>}
+                to="#quote"
+                variant="secondary"
               >
-                <span>Cotizar Unidad Completa</span>
-                <span className="material-symbols-outlined">arrow_forward</span>
-              </a>
+                Cotizar Unidad Completa
+              </AppLinkButton>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-surface px-margin-desktop max-w-container-max mx-auto">
+      <section className="py-20 bg-surface px-margin-desktop max-w-container-max mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-gutter">
           <div className="max-w-2xl">
             <h2 className="font-headline-lg text-headline-lg text-primary mb-4">
@@ -51,7 +54,7 @@ export default function ServicioExclusivoPage() {
             <div className="w-24 h-1.5 bg-secondary" />
           </div>
 
-          <p className="font-body-md text-body-md text-outline max-w-md">
+          <p className="font-body-md text-body-md text-on-surface-variant max-w-md">
             Diseñamos soluciones a medida con vehículos de última generación,
             optimizados para el rendimiento y la seguridad.
           </p>
@@ -84,7 +87,7 @@ export default function ServicioExclusivoPage() {
           ].map((card) => (
             <div
               key={card.title}
-              className="group bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+              className="group bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
             >
               <div className="h-80 overflow-hidden relative">
                 <img
@@ -92,7 +95,7 @@ export default function ServicioExclusivoPage() {
                   alt={card.title}
                   src={card.image}
                 />
-                <div className="absolute top-4 left-4 bg-primary text-white px-4 py-2 font-label-md text-label-md rounded">
+                <div className="absolute top-4 left-4 bg-primary text-on-primary px-4 py-2 font-label-md text-label-md rounded-full">
                   {card.tag}
                 </div>
               </div>
@@ -122,7 +125,7 @@ export default function ServicioExclusivoPage() {
         </div>
       </section>
 
-      <section className="bg-primary text-on-primary py-24 relative overflow-hidden">
+      <section className="bg-primary text-on-primary py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div
             className="absolute w-full h-full"
@@ -140,14 +143,14 @@ export default function ServicioExclusivoPage() {
               Protocolos de Seguridad y Homologación
             </h2>
 
-            <p className="font-body-lg text-body-lg leading-relaxed text-on-primary-container mb-8">
+            <p className="font-body-lg text-body-lg leading-relaxed text-on-primary/80 mb-8">
               Operamos bajo exigentes estándares corporativos. Toda la flota
               cuenta con revisiones técnicas vigentes ante el MTC, sistemas de
               rastreo satelital GPS activo las 24 horas y pólizas de seguro de
               carga dedicadas.
             </p>
 
-            <p className="font-body-md text-body-md opacity-80 mb-10">
+            <p className="font-body-md text-body-md text-on-primary/80 mb-10">
               Nuestros conductores están capacitados en manejo defensivo y
               protocolos de ingreso a campamentos y plantas industriales.
             </p>
@@ -170,7 +173,7 @@ export default function ServicioExclusivoPage() {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl group">
               <img
                 className="w-full h-96 object-cover brightness-90 group-hover:scale-105 transition-transform duration-700"
                 alt="Centro de control logístico con monitoreo GPS"
@@ -192,7 +195,7 @@ export default function ServicioExclusivoPage() {
                 <span className="font-label-sm text-label-sm uppercase tracking-tighter text-secondary">
                   MONITOREO EN TIEMPO REAL
                 </span>
-                <div className="font-body-sm text-body-sm text-white">
+                <div className="font-body-sm text-body-sm text-on-primary">
                   Centro de Control Operativo - Vigilancia permanente de cada
                   ruta.
                 </div>
@@ -203,10 +206,10 @@ export default function ServicioExclusivoPage() {
       </section>
 
       <section
-        className="py-24 px-margin-desktop bg-surface-container-low"
+        className="py-20 px-margin-desktop bg-surface-container-low"
         id="quote"
       >
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-outline-variant p-12 text-center relative overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-xl border border-outline-variant p-12 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-24 h-24 bg-secondary rotate-45 translate-x-12 -translate-y-12" />
 
           <h2 className="font-headline-lg text-headline-lg text-primary mb-4">
@@ -219,20 +222,23 @@ export default function ServicioExclusivoPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a
-              className="bg-secondary text-white font-bold px-12 py-5 rounded shadow-lg hover:bg-red-700 transition-all text-body-md font-body-md"
-              href="/contacto"
+            <AppLinkButton
+              className="px-12 py-5 shadow-lg text-body-md font-body-md"
+              to="/contacto"
+              variant="secondary"
             >
               Cotizar Unidad Completa
-            </a>
+            </AppLinkButton>
 
-            <a
-              className="flex items-center gap-2 font-bold text-primary hover:text-secondary transition-colors text-body-md font-body-md"
-              href="tel:013653968"
+            <AppLinkButton
+              className="bg-transparent p-0 h-auto shadow-none rounded-none flex items-center gap-2 font-bold text-primary hover:bg-transparent hover:text-secondary transition-colors text-body-md font-body-md"
+              leftIcon={<span className="material-symbols-outlined">call</span>}
+              to="tel:013653968"
+              variant="ghost"
+              size="sm"
             >
-              <span className="material-symbols-outlined">call</span>
               Hablar con un asesor
-            </a>
+            </AppLinkButton>
           </div>
 
           <div className="mt-16 pt-8 border-t border-outline-variant flex flex-wrap justify-center gap-gutter opacity-60">

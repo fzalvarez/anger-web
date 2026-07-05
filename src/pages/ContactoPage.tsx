@@ -1,15 +1,17 @@
+import { AppButton } from "../components/common/AppButton";
+
 export default function ContactoPage() {
   return (
     <main className="max-w-container-max mx-auto px-margin-desktop py-12 mt-20">
       <section className="mb-16 text-center lg:text-left">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm rounded mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-1 bg-secondary text-on-secondary font-label-md text-label-md uppercase tracking-wider rounded-full mb-4">
           <span className="material-symbols-outlined text-[16px]">
             support_agent
           </span>
           ATENCIÓN INMEDIATA
         </div>
 
-        <h1 className="font-headline-lg text-headline-lg text-primary mb-4">
+        <h1 className="font-headline-lg text-headline-lg text-primary mb-6">
           Central de Atención Comercial y Soporte Logístico
         </h1>
 
@@ -22,7 +24,7 @@ export default function ContactoPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
         <div className="lg:col-span-5 space-y-6">
-          <div className="bg-white p-6 rounded-xl border border-outline-variant hover:border-secondary transition-colors shadow-sm group">
+          <div className="bg-white p-6 rounded-xl border border-outline-variant hover:border-secondary hover:shadow-lg transition-all shadow-sm group">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-surface-container rounded-lg group-hover:bg-secondary-fixed transition-colors">
                 <span className="material-symbols-outlined text-primary group-hover:text-secondary">
@@ -43,7 +45,7 @@ export default function ContactoPage() {
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-outline-variant hover:border-secondary transition-colors shadow-sm group">
+          <div className="bg-white p-6 rounded-xl border border-outline-variant hover:border-secondary hover:shadow-lg transition-all shadow-sm group">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-surface-container rounded-lg group-hover:bg-secondary-fixed transition-colors">
                 <span className="material-symbols-outlined text-primary group-hover:text-secondary">
@@ -217,21 +219,24 @@ export default function ContactoPage() {
                 />
               </div>
 
-              <button
-                className="w-full md:w-auto bg-primary text-on-primary font-bold py-4 px-10 rounded-lg hover:bg-primary-container transition-all active:scale-[0.98] shadow-md flex items-center justify-center gap-2 group"
+              <AppButton
+                className="group w-full md:w-auto h-auto px-10 py-4 rounded-lg shadow-md justify-center"
+                rightIcon={
+                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
+                    send
+                  </span>
+                }
                 type="submit"
+                variant="primary"
               >
                 Enviar Requerimiento Comercial
-                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
-                  send
-                </span>
-              </button>
+              </AppButton>
             </form>
           </div>
         </div>
       </div>
 
-      <section className="mt-16 bg-primary rounded-2xl p-8 md:p-12 text-white relative overflow-hidden group">
+      <section className="mt-16 bg-primary rounded-xl p-8 md:p-12 text-on-primary relative overflow-hidden group">
         <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
           <div className="bg-white/10 p-6 rounded-full backdrop-blur-sm border border-white/20">
             <span
@@ -246,7 +251,7 @@ export default function ContactoPage() {
             <h3 className="font-headline-md text-headline-md mb-2">
               Compromiso ANGER
             </h3>
-            <p className="font-body-lg text-body-lg text-on-primary-container max-w-4xl opacity-90 leading-relaxed">
+            <p className="font-body-lg text-body-lg text-on-primary/80 max-w-4xl leading-relaxed">
               Entendemos la urgencia de tu cadena de suministro. Todos los
               requerimientos recibidos a través de nuestros canales digitales
               son asignados a un Ejecutivo Comercial en un plazo máximo de{" "}

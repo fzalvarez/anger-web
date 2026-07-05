@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { AppButton } from "../components/common/AppButton";
 
 export default function SeguimientoPage() {
   const [tracking, setTracking] = useState("");
@@ -31,7 +32,7 @@ export default function SeguimientoPage() {
     <main className="mt-20 min-h-screen bg-background text-on-background">
       <section className="relative pt-16 pb-12 overflow-hidden">
         <div className="max-w-4xl mx-auto px-margin-mobile text-center relative z-10">
-          <h1 className="font-headline-lg text-headline-lg mb-4 text-primary">
+          <h1 className="font-headline-lg text-headline-lg mb-6 text-primary">
             Seguimiento de Envíos y Carga Nacional
           </h1>
 
@@ -41,7 +42,7 @@ export default function SeguimientoPage() {
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 p-2 bg-white rounded-xl shadow-xl border border-outline-variant max-w-3xl mx-auto group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
-            <div className="flex-grow flex items-center px-4">
+            <div className="grow flex items-center px-4">
               <span className="material-symbols-outlined text-outline mr-3">
                 search
               </span>
@@ -56,23 +57,22 @@ export default function SeguimientoPage() {
               />
             </div>
 
-            <button
-              className="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
-              type="button"
+            <AppButton
+              className="px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-secondary active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
               disabled={loading}
-              onClick={handleSearch}
-            >
-              {loading ? (
-                <>
+              leftIcon={
+                loading ? (
                   <span className="material-symbols-outlined animate-spin">
                     sync
                   </span>
-                  Consultando...
-                </>
-              ) : (
-                "Consultar Estado"
-              )}
-            </button>
+                ) : null
+              }
+              type="button"
+              variant="secondary"
+              onClick={handleSearch}
+            >
+              {loading ? "Consultando..." : "Consultar Estado"}
+            </AppButton>
           </div>
         </div>
       </section>
@@ -147,11 +147,11 @@ export default function SeguimientoPage() {
       <section ref={resultsRef} className="py-12 px-margin-mobile">
         <div className="max-w-5xl mx-auto">
           <div
-            className={`bg-white rounded-2xl shadow-2xl border border-outline-variant overflow-hidden transition-all ${
+            className={`bg-white rounded-xl shadow-2xl border border-outline-variant overflow-hidden transition-all ${
               highlight ? "ring-4 ring-secondary/20" : ""
             }`}
           >
-            <div className="bg-gradient-to-br from-primary to-primary-container p-8 text-on-primary">
+            <div className="bg-linear-to-br from-primary to-primary-container p-8 text-on-primary">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                   <span className="text-xs uppercase tracking-widest opacity-80 font-bold">
@@ -283,7 +283,7 @@ export default function SeguimientoPage() {
               />
 
               <div className="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row gap-4">
-                <div className="bg-white p-4 rounded-lg shadow-xl border border-outline-variant flex items-center gap-4 flex-1 max-w-sm">
+                <div className="bg-white p-4 rounded-lg shadow-lg border border-outline-variant flex items-center gap-4 flex-1 max-w-sm">
                   <div className="p-3 bg-primary/10 rounded-lg">
                     <span className="material-symbols-outlined text-primary">
                       location_on
@@ -299,7 +299,7 @@ export default function SeguimientoPage() {
                   </div>
                 </div>
 
-                <div className="bg-white p-4 rounded-lg shadow-xl border border-outline-variant flex items-center gap-4 flex-1 max-w-sm">
+                <div className="bg-white p-4 rounded-lg shadow-lg border border-outline-variant flex items-center gap-4 flex-1 max-w-sm">
                   <div className="p-3 bg-secondary/10 rounded-lg">
                     <span className="material-symbols-outlined text-secondary">
                       speed
@@ -320,27 +320,35 @@ export default function SeguimientoPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-primary-container text-on-primary-container">
+      <section className="py-20 bg-primary text-on-primary">
         <div className="max-w-container-max mx-auto px-margin-desktop grid md:grid-cols-2 items-center gap-12">
           <div>
-            <h2 className="font-headline-lg text-headline-lg mb-6">
+            <h2 className="font-headline-lg text-headline-lg mb-4">
               ¿Necesitas soporte especializado para tu carga?
             </h2>
-            <p className="font-body-lg text-body-lg opacity-80 mb-8">
+            <p className="font-body-lg text-body-lg text-on-primary/80 mb-8">
               Nuestros expertos logísticos están listos para brindarte la mejor
               solución en transporte y distribución a nivel nacional.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all shadow-lg">
+              <AppButton
+                className="px-8 py-4 shadow-lg"
+                type="button"
+                variant="secondary"
+              >
                 Solicitar Cotización
-              </button>
-              <button className="border border-on-primary-container text-on-primary-container px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-white/10 transition-all">
+              </AppButton>
+              <AppButton
+                className="border border-on-primary text-on-primary px-8 py-4 hover:bg-on-primary/10"
+                type="button"
+                variant="outline"
+              >
                 Saber más
-              </button>
+              </AppButton>
             </div>
           </div>
 
-          <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
