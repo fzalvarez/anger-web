@@ -326,7 +326,7 @@ export default function SeguimientoPage() {
             <h2 className="font-headline-lg text-headline-lg mb-4">
               ¿Necesitas soporte especializado para tu carga?
             </h2>
-            <p className="font-body-lg text-body-lg text-on-primary/80 mb-8">
+            <p className="font-body-lg text-body-lg text-white/80 mb-8">
               Nuestros expertos logísticos están listos para brindarte la mejor
               solución en transporte y distribución a nivel nacional.
             </p>
@@ -339,7 +339,7 @@ export default function SeguimientoPage() {
                 Solicitar Cotización
               </AppButton>
               <AppButton
-                className="border border-on-primary text-on-primary px-8 py-4 hover:bg-on-primary/10"
+                className="border border-white/40 text-white px-8 py-4 hover:bg-white/10"
                 type="button"
                 variant="outline"
               >

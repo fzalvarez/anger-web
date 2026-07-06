@@ -32,7 +32,7 @@ export default function ServicioAereoPage() {
               Logística Aérea Nacional para Cargas de Alta Prioridad
             </h1>
 
-            <p className="font-body-lg text-body-lg text-on-primary/80 mb-8">
+            <p className="font-body-lg text-body-lg text-white/80 mb-8">
               La vía más rápida para mitigar quiebres de stock o trasladar
               suministros críticos. Conectamos tus almacenes con las terminales
               aéreas de los principales departamentos del país en tiempos
@@ -50,7 +50,7 @@ export default function ServicioAereoPage() {
               </AppLinkButton>
 
               <AppButton
-                className="bg-transparent border border-on-primary text-on-primary px-8 py-4 rounded-lg font-label-md hover:bg-on-primary/10 transition-all"
+                className="bg-transparent border border-white/40 text-white px-8 py-4 rounded-lg font-label-md hover:bg-white/10 transition-all"
                 type="button"
                 variant="outline"
               >
@@ -159,7 +159,7 @@ export default function ServicioAereoPage() {
                   <span className="text-headline-sm font-headline-sm text-on-primary block">
                     99.8%
                   </span>
-                  <span className="text-label-sm uppercase tracking-widest text-on-primary/80">
+                  <span className="text-label-sm uppercase tracking-widest text-white/80">
                     Precisión Documentaria
                   </span>
                 </div>
@@ -175,7 +175,7 @@ export default function ServicioAereoPage() {
                 Soporte en Terminales y Aduana
               </h2>
 
-              <p className="font-body-lg text-body-lg mb-8 text-on-primary/80">
+              <p className="font-body-lg text-body-lg mb-8 text-white/80">
                 Nos encargamos del manipuleo, trámites documentarios aduaneros
                 locales/aeroportuarios y la cadena de custodia de la mercancía
                 seca, garantizando un flujo limpio desde el recojo hasta la
@@ -189,7 +189,7 @@ export default function ServicioAereoPage() {
                   </span>
                   <div>
                     <h4 className="font-bold mb-1">Trámites Aduaneros</h4>
-                    <p className="text-body-sm text-on-primary/70">
+                    <p className="text-body-sm text-white/70">
                       Gestión completa de manifiestos y guías aéreas sin
                       demoras.
                     </p>
@@ -202,7 +202,7 @@ export default function ServicioAereoPage() {
                   </span>
                   <div>
                     <h4 className="font-bold mb-1">Cadena de Custodia</h4>
-                    <p className="text-body-sm text-on-primary/70">
+                    <p className="text-body-sm text-white/70">
                       Seguimiento físico riguroso en cada punto de
                       transferencia.
                     </p>
@@ -226,7 +226,7 @@ export default function ServicioAereoPage() {
             ¿Tiene un embarque crítico hoy?
           </h2>
 
-          <p className="font-body-lg text-body-lg text-on-primary/80 mb-12 max-w-2xl mx-auto">
+          <p className="font-body-lg text-body-lg text-white/80 mb-12 max-w-2xl mx-auto">
             Nuestros especialistas en transporte aéreo están listos para
             coordinar su recojo y despacho de inmediato. Actuamos con la
             urgencia que su negocio demanda.
@@ -245,7 +245,7 @@ export default function ServicioAereoPage() {
             </AppLinkButton>
 
             <AppLinkButton
-              className="px-10 py-5 border border-on-primary text-on-primary hover:bg-on-primary/10 justify-center"
+              className="px-10 py-5 border border-on-primary/40 text-on-primary hover:bg-on-primary/10 justify-center"
               rightIcon={<span className="material-symbols-outlined">call</span>}
               to="tel:013653968"
               variant="outline"
@@ -254,7 +254,7 @@ export default function ServicioAereoPage() {
             </AppLinkButton>
           </div>
 
-          <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-8 text-on-primary/80 font-label-md">
+          <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-8 text-white/80 font-label-md">
             {[
               "COBERTURA NACIONAL",
               "MONITOREO EN TIEMPO REAL",

@@ -19,6 +19,7 @@ export default function MainLayout() {
   const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = TITLES[normalizedPath] ?? TITLES["/"];
     document.documentElement.lang = "es";
     document.documentElement.classList.add("light");
@@ -96,13 +97,19 @@ export default function MainLayout() {
         .border-primary { border-color: #021356; }
         .border-surface-variant { border-color: #dce0ef; }
 
-        .hover\:text-secondary:hover { color: #bc0100; }
-        .hover\:border-secondary:hover { border-color: #bc0100; }
-        .hover\:bg-primary-container:hover { background-color: #354282; }
-        .hover\:bg-secondary-container:hover { background-color: #ea0703; }
-        .group:hover .group-hover\:bg-primary { background-color: #021356; }
-        .group:hover .group-hover\:text-secondary { color: #bc0100; }
-        .focus\:ring-secondary:focus {
+        .text-on-primary\\/80 { color: rgba(255, 255, 255, 0.8); }
+        .border-on-primary\\/40 { border-color: rgba(255, 255, 255, 0.4); }
+
+        .hover\\:text-secondary:hover { color: #bc0100; }
+        .hover\\:text-on-primary:hover { color: #ffffff; }
+        .hover\\:border-secondary:hover { border-color: #bc0100; }
+        .hover\\:bg-primary-container:hover { background-color: #354282; }
+        .hover\\:bg-secondary-container:hover { background-color: #ea0703; }
+        .hover\\:bg-on-primary\\/10:hover { background-color: rgba(255, 255, 255, 0.1); }
+        .group:hover .group-hover\\:bg-primary { background-color: #021356; }
+        .group:hover .group-hover\\:text-secondary { color: #bc0100; }
+        .group:hover .group-hover\\:text-on-primary { color: #ffffff; }
+        .focus\\:ring-secondary:focus {
           outline: 2px solid #bc0100;
           outline-offset: 2px;
         }

@@ -1,4 +1,7 @@
 import { AppButton } from "../components/common/AppButton";
+import { Input } from "#components/ui/input";
+import { Label } from "#components/ui/label";
+import { Textarea } from "#components/ui/textarea";
 
 export default function ContactoPage() {
   return (
@@ -134,7 +137,7 @@ export default function ContactoPage() {
         </div>
 
         <div className="lg:col-span-7">
-          <div className="bg-white p-margin-desktop rounded-xl border border-outline-variant shadow-lg relative overflow-hidden">
+          <div className="bg-white px-margin-desktop py-margin-desktop rounded-xl border border-outline-variant shadow-lg relative overflow-hidden">
             <div className="absolute top-0 left-0 w-2 h-full bg-secondary" />
 
             <h2 className="font-headline-md text-headline-md text-primary mb-2">
@@ -157,11 +160,12 @@ export default function ContactoPage() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="font-label-md text-label-md text-on-surface uppercase block">
+                  <Label className="font-label-md text-label-md text-on-surface uppercase" htmlFor="nombre">
                     Nombre Completo
-                  </label>
-                  <input
-                    className="w-full border border-outline-variant p-3 rounded-lg font-body-md form-focus"
+                  </Label>
+                  <Input
+                    className="font-body-md"
+                    id="nombre"
                     placeholder="Ej: Juan Pérez"
                     required
                     type="text"
@@ -169,11 +173,12 @@ export default function ContactoPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="font-label-md text-label-md text-on-surface uppercase block">
+                  <Label className="font-label-md text-label-md text-on-surface uppercase" htmlFor="empresa">
                     Empresa / RUC
-                  </label>
-                  <input
-                    className="w-full border border-outline-variant p-3 rounded-lg font-body-md form-focus"
+                  </Label>
+                  <Input
+                    className="font-body-md"
+                    id="empresa"
                     placeholder="Nombre de empresa o RUC"
                     required
                     type="text"
@@ -183,11 +188,12 @@ export default function ContactoPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="font-label-md text-label-md text-on-surface uppercase block">
+                  <Label className="font-label-md text-label-md text-on-surface uppercase" htmlFor="correo">
                     Correo Corporativo
-                  </label>
-                  <input
-                    className="w-full border border-outline-variant p-3 rounded-lg font-body-md form-focus"
+                  </Label>
+                  <Input
+                    className="font-body-md"
+                    id="correo"
                     placeholder="nombre@empresa.com"
                     required
                     type="email"
@@ -195,24 +201,32 @@ export default function ContactoPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="font-label-md text-label-md text-on-surface uppercase block">
+                  <Label className="font-label-md text-label-md text-on-surface uppercase" htmlFor="telefono">
                     Teléfono de Contacto
-                  </label>
-                  <input
-                    className="w-full border border-outline-variant p-3 rounded-lg font-body-md form-focus"
+                  </Label>
+                  <Input
+                    className="font-body-md"
+                    id="telefono"
+                    inputMode="numeric"
+                    pattern="^\\+?[0-9\\s]{6,15}$"
                     placeholder="+51 900 000 000"
                     required
+                    title="Ingresa solo números; puede incluir un + inicial"
                     type="tel"
+                    onChange={(event) => {
+                      event.target.value = event.target.value.replace(/[^\d+\s]/g, "");
+                    }}
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="font-label-md text-label-md text-on-surface uppercase block">
+                <Label className="font-label-md text-label-md text-on-surface uppercase" htmlFor="detalles">
                   Detalles del Requerimiento
-                </label>
-                <textarea
-                  className="w-full border border-outline-variant p-3 rounded-lg font-body-md form-focus"
+                </Label>
+                <Textarea
+                  className="font-body-md min-h-32"
+                  id="detalles"
                   placeholder="Describa brevemente su necesidad operativa, origen, destino y tipo de carga..."
                   required
                   rows={4}
@@ -220,7 +234,7 @@ export default function ContactoPage() {
               </div>
 
               <AppButton
-                className="group w-full md:w-auto h-auto px-10 py-4 rounded-lg shadow-md justify-center"
+                className="group w-full md:w-auto h-auto px-10 py-4 text-body-md shadow-md justify-center"
                 rightIcon={
                   <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
                     send
@@ -251,7 +265,7 @@ export default function ContactoPage() {
             <h3 className="font-headline-md text-headline-md mb-2">
               Compromiso ANGER
             </h3>
-            <p className="font-body-lg text-body-lg text-on-primary/80 max-w-4xl leading-relaxed">
+            <p className="font-body-lg text-body-lg text-white/80 max-w-4xl leading-relaxed">
               Entendemos la urgencia de tu cadena de suministro. Todos los
               requerimientos recibidos a través de nuestros canales digitales
               son asignados a un Ejecutivo Comercial en un plazo máximo de{" "}

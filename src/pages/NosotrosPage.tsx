@@ -176,7 +176,7 @@ export default function NosotrosPage() {
           <h2 className="font-headline-lg text-headline-lg">
             Conoce nuestras soluciones de transporte nacional
           </h2>
-          <p className="font-body-lg text-body-lg text-on-primary/80 max-w-2xl mx-auto">
+          <p className="font-body-lg text-body-lg text-white/80 max-w-2xl mx-auto">
             Optimice sus operaciones con el respaldo técnico de un operador
             logístico de primer nivel.
           </p>

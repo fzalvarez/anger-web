@@ -18,7 +18,7 @@ export default function ServiciosPage() {
             <h1 className="font-headline-lg text-headline-lg mb-6 leading-tight">
               Distribución Nacional Express y Logística Comercial B2B
             </h1>
-            <p className="font-body-lg text-body-lg text-on-primary/80 leading-relaxed mb-8">
+            <p className="font-body-lg text-body-lg text-white/80 leading-relaxed mb-8">
               Conectamos tus almacenes con los principales puntos de venta y
               Centros de Distribución del país mediante un servicio ágil,
               monitoreado y diseñado para cumplir ventanas horarias estrictas.
@@ -43,7 +43,7 @@ export default function ServiciosPage() {
                 <span className="text-on-primary font-headline-md text-headline-md block">
                   99.8%
                 </span>
-                <span className="text-on-primary/80 font-label-md text-label-md">
+                <span className="text-white/80 font-label-md text-label-md">
                   ENTREGA A TIEMPO
                 </span>
               </div>
@@ -132,7 +132,7 @@ export default function ServiciosPage() {
           <h2 className="font-headline-lg text-headline-lg mb-4">
             Optimiza tu logística nacional con ANGER Express
           </h2>
-          <p className="font-body-lg text-body-lg text-on-primary/80 max-w-2xl mx-auto mb-10">
+          <p className="font-body-lg text-body-lg text-white/80 max-w-2xl mx-auto mb-10">
             Solicita hoy una cotización personalizada y descubre cómo podemos
             elevar tus estándares de entrega B2B.
           </p>

@@ -25,7 +25,7 @@ export default function ServicioExclusivoPage() {
               Furgones y Plataformas
             </h1>
 
-            <p className="font-body-lg text-body-lg text-on-primary/80 max-w-2xl">
+            <p className="font-body-lg text-body-lg text-white/80 max-w-2xl">
               Soluciones de transporte exclusivo a nivel nacional para
               operaciones logísticas industriales, farmacéuticas y mineras de
               alta envergadura.
@@ -143,14 +143,14 @@ export default function ServicioExclusivoPage() {
               Protocolos de Seguridad y Homologación
             </h2>
 
-            <p className="font-body-lg text-body-lg leading-relaxed text-on-primary/80 mb-8">
+            <p className="font-body-lg text-body-lg leading-relaxed text-white/80 mb-8">
               Operamos bajo exigentes estándares corporativos. Toda la flota
               cuenta con revisiones técnicas vigentes ante el MTC, sistemas de
               rastreo satelital GPS activo las 24 horas y pólizas de seguro de
               carga dedicadas.
             </p>
 
-            <p className="font-body-md text-body-md text-on-primary/80 mb-10">
+            <p className="font-body-md text-body-md text-white/80 mb-10">
               Nuestros conductores están capacitados en manejo defensivo y
               protocolos de ingreso a campamentos y plantas industriales.
             </p>

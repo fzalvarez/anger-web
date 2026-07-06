@@ -24,24 +24,23 @@ export default function HomePage() {
                 Transporte y Distribución Nacional Segura
               </span>
             </h1>
-            <p className="font-body-lg text-body-lg mb-8 text-on-primary/80">
+            <p className="font-body-lg text-body-lg mb-10 text-white/80">
               Optimizamos su cadena de suministro con tecnología de punta y una
               flota de vanguardia para garantizar entregas precisas en todo el
               territorio peruano.
             </p>
             <div className="flex flex-wrap gap-4">
               <AppButton
-                className="px-8 py-4 rounded-lg font-bold transition-cubic hover:shadow-lg active:scale-95"
+                className="h-auto px-8 py-4 text-body-md transition-cubic hover:shadow-lg"
                 type="button"
                 variant="secondary"
               >
                 Nuestros Servicios
               </AppButton>
               <AppButton
-                className="bg-white/10 backdrop-blur-md border-2 border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold transition-cubic"
+                className="h-auto px-8 py-4 text-body-md bg-white/10 backdrop-blur-md border-2 border-white/20 hover:bg-white/20 text-on-primary transition-cubic"
                 type="button"
                 variant="outline"
-                size="lg"
               >
                 Ver Cobertura
               </AppButton>
@@ -56,7 +55,7 @@ export default function HomePage() {
             <div className="bg-white border border-outline-variant p-8 rounded-xl shadow-sm transition-cubic hover:border-secondary hover:shadow-lg group">
               <div className="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <span
-                  className="material-symbols-outlined text-primary group-hover:text-white"
+                  className="material-symbols-outlined text-primary group-hover:text-on-primary"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   gps_fixed
@@ -74,7 +73,7 @@ export default function HomePage() {
             <div className="bg-white border border-outline-variant p-8 rounded-xl shadow-sm transition-cubic hover:border-secondary hover:shadow-lg group">
               <div className="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <span
-                  className="material-symbols-outlined text-primary group-hover:text-white"
+                  className="material-symbols-outlined text-primary group-hover:text-on-primary"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   verified_user
@@ -92,7 +91,7 @@ export default function HomePage() {
             <div className="bg-white border border-outline-variant p-8 rounded-xl shadow-sm transition-cubic hover:border-secondary hover:shadow-lg group">
               <div className="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <span
-                  className="material-symbols-outlined text-primary group-hover:text-white"
+                  className="material-symbols-outlined text-primary group-hover:text-on-primary"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   local_shipping
@@ -117,7 +116,7 @@ export default function HomePage() {
               <h2 className="font-headline-lg text-headline-lg mb-4">
                 Soluciones por Sector
               </h2>
-              <p className="font-body-lg text-body-lg text-on-primary/80 max-w-xl">
+              <p className="font-body-lg text-body-lg text-white/80 max-w-xl">
                 Experiencia especializada en el manejo de mercancía crítica para
                 diversas industrias peruanas.
               </p>
@@ -382,7 +381,7 @@ export default function HomePage() {
               Cotizar mi Proyecto Ahora
             </AppButton>
             <AppLinkButton
-              className="bg-transparent p-0 h-auto shadow-none rounded-none text-white hover:bg-transparent hover:text-secondary transition-colors font-bold text-lg flex items-center gap-3"
+              className="bg-transparent p-0 h-auto shadow-none rounded-none text-on-primary hover:bg-transparent hover:text-secondary transition-colors font-bold text-lg flex items-center gap-3"
               leftIcon={<span className="material-symbols-outlined">phone_in_talk</span>}
               to="tel:+511234567"
               variant="ghost"

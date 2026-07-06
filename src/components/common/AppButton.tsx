@@ -17,7 +17,7 @@ const variantClasses: Record<AppButtonVariant, string> = {
   primary: "bg-primary text-on-primary hover:bg-primary-container",
   secondary: "bg-secondary text-on-secondary hover:bg-secondary-container",
   outline:
-    "border border-primary bg-transparent text-primary hover:bg-primary hover:text-on-primary",
+    "border border-primary bg-transparent text-primary hover:bg-primary hover:text-white",
   ghost: "bg-transparent text-primary hover:bg-surface-container-low",
   hero: "bg-secondary text-on-primary hover:bg-secondary-container shadow-lg",
 };
