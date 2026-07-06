@@ -1,0 +1,21 @@
+/* TEAM */
+
+    Company: OCZA SOLUTIONS SAC
+    Site: https://angerperu.com
+
+/* THANKS */
+
+/* SITE */
+
+    Last update: 2026/07/05
+    Language: Spanish
+    Doctype: HTML5
+    IDE: Visual Studio Code
+
+/* TOOLS */
+
+    React
+    Vite
+    TypeScript
+    Tailwind CSS
+    React Router
