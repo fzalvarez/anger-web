@@ -28,6 +28,12 @@ const sizeClasses: Record<AppButtonSize, string> = {
   lg: "h-12 px-6 text-body-md",
 };
 
+const buttonSizeMap: Record<AppButtonSize, "sm" | "default" | "lg"> = {
+  sm: "sm",
+  md: "default",
+  lg: "lg",
+};
+
 export function AppButton({
   variant = "primary",
   size = "md",
@@ -40,6 +46,8 @@ export function AppButton({
 }: AppButtonProps) {
   return (
     <Button
+      variant="ghost"
+      size={buttonSizeMap[size]}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-lg font-bold transition-all active:scale-95",
         variantClasses[variant],

@@ -151,7 +151,7 @@ export default function SeguimientoPage() {
               highlight ? "ring-4 ring-secondary/20" : ""
             }`}
           >
-            <div className="bg-linear-to-br from-primary to-primary-container p-8 text-on-primary">
+            <div className="bg-primary p-8 text-on-primary">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                   <span className="text-xs uppercase tracking-widest opacity-80 font-bold">

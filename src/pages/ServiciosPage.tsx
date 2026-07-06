@@ -11,7 +11,7 @@ export default function ServiciosPage() {
               "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCowqYDG_CWHGJrcm3B88wZ4Uq-a_jhBbn76ke40-xPZWWVL-jguLHJzISLc8oKNHJi0rbOVHqww2-edBy2v56sujsjKtnGsqpKiLQ1Dppogi6a3wg0AbooYt9C57vRjdlP47PJLTccMgVDQjiEDtlOxwov_49CnSLN-iTI_HkE0q7lPvImSuZFb5RZNIWeC5RPt5zJcHW-YryTWMWcV2glSAqeRVAvdPvp3D6waM46UUQh4TuXJw1W5dEZBsHS9fI-Z-BLbclrNgu')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#021356]/90 via-[#021356]/70 to-[#021356]/0" />
 
         <div className="relative h-full flex flex-col justify-center px-margin-desktop max-w-container-max mx-auto text-white">
           <div className="max-w-2xl">

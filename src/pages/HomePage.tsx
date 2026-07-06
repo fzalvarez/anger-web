@@ -134,7 +134,7 @@ export default function HomePage() {
                     "url('https://lh3.googleusercontent.com/aida/AP1WRLu4_uOiSoQpdsvg96p29TlK9QH8EgRmaQ0iAM8iJ_2NS7W59CXve3qXkWCVX-C8YjXds1_ZzoNzKx9OQADxH_OXXmzE0F4dElC-m5N_Ig-BKPHWT-oBlriB2Jpnk7N5oQESpD7emSYedfd77ex2PXOAg7DJgNdZZpE0A4E031kPPHI5qZ_IuXQOHJYsgD65ISSntaY6EYGmM8TkkJmP0R7vUR95JKAeknJ7YemJPaaa2udO4lPl9UgKnHpj')",
                 }}
               ></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#021356] via-[#021356]/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6">
                 <span className="material-symbols-outlined text-secondary mb-2">
                   shopping_bag
@@ -156,7 +156,7 @@ export default function HomePage() {
                     "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrDnX6PvgViz4mdcMt_ffz9XYuaWchn55_tqXvlEvquPOyMBkPrR91-P7CgrEejTBLxwlNiwsxNZFgWXrKiJuwQz0o6mO1R1JoULXzjMSf9npy29FBuHDeK2Q9vvIkxoOtgsc1u61dgAqf-2eTZf-JbMNlIt9OCg1pNxsobcW7-FNaRMIpLirJdIcqqSc6v0n39THudp0T5imH9CrGC-t8q7GBo3xLIamVL7jk1PdYBbRpFkJo3NQ6JAdI964CT2rxZHXApYJtK2zv')",
                 }}
               ></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#021356] via-[#021356]/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6">
                 <span className="material-symbols-outlined text-secondary mb-2">
                   inventory_2
@@ -180,7 +180,7 @@ export default function HomePage() {
                     "url('https://lh3.googleusercontent.com/aida/public/AB6AXuBSBZZTcK1scx_mj_heRJTfGYDjkm3-qXSVXRrd9W8ocE9ChJAzl5Ggt9QQfwGpeK73aUKlYQubfMPSPCg-V1QRc2-_qQUtEIm3Syh2KYom62zO7GPg_eoBiHenApR0cQRPLeXqlDFK7oH0SqSx-jP1e5gNKTkszMtTySxuqPnSgQJgqqgky4uIwNob6HzAFMfyhGJ1sM2omlPISrYA0Sn8oDFk4gKu1VjtKKY1hoNKFm8INypWyIAg54sjPRHYrLuppL5zZXY5LdKQ')",
                 }}
               ></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#021356] via-[#021356]/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6">
                 <span className="material-symbols-outlined text-secondary mb-2">
                   medication
@@ -203,7 +203,7 @@ export default function HomePage() {
                     "url('https://lh3.googleusercontent.com/aida/AP1WRLtyys-z4Jg1CZSYHK4nnCJsQCXcJEqYhxyYE3OHfSb6jTGZ5l4dHaKYMQWeQGyBC8lVjQfG0NtWaSdGgaLUA1jwOrT3Wba-1bkMtkUYywrmcwN3CRxGu3r1cQnqA07lcwv7ys1vhfq_sd1GBejHljhfV9bvSoEQbnvg7gQdCqlCWHWgYvCkN_gi3DPUfrgPIlsTj7fayNgA40Wc9WKoMrGkPJyuwB_qvXnSt8NKcHNRzO08EqG1zhv5B25k')",
                 }}
               ></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#021356] via-[#021356]/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6">
                 <span className="material-symbols-outlined text-secondary mb-2">
                   precision_manufacturing

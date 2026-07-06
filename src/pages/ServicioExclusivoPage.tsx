@@ -10,7 +10,7 @@ export default function ServicioExclusivoPage() {
             className="w-full h-full object-cover brightness-[0.4]"
             src="https://lh3.googleusercontent.com/aida/AP1WRLvgExlh93vARy8zeTazpUZMh6IarXR9C4GeZT24ZXu_3fJtFPu3AZ5SEyyt1m9YcxcGIdwQDqdjgbX6gCWftpEzKWCqiL16vWEcDPLOLg-9iz7J_c4hYkBdfmo4SIUAQhnDMjIqHj99zzWf_AO_sEmCNvUvpjAMVDy7G2TOmpboPLtqbAQ91TWC-3-QlJawivHD9eXQzEdqbw0mmcSJLoV_bwu3RZvk_ZJMVhrrJw44fGcNDx5lPuih0iHU"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#021356]/80 to-transparent" />
         </div>
 
         <div className="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto py-20">

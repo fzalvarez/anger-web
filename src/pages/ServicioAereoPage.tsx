@@ -6,7 +6,7 @@ export default function ServicioAereoPage() {
     <main className="mt-20 bg-surface text-on-surface overflow-x-hidden">
       <section className="relative min-h-[819px] flex items-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#021356] via-[#021356]/80 to-transparent z-10" />
           <img
             className="w-full h-full object-cover"
             alt="Avión de carga siendo preparado en terminal aérea"
