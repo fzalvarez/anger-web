@@ -39,7 +39,7 @@ export default function ContactoPage() {
                   CENTRAL TELEFÓNICA
                 </p>
                 <p className="font-headline-sm text-headline-sm text-primary">
-                  (01) 365 3968
+                  +51 941 841 853
                 </p>
                 <p className="font-body-sm text-body-sm text-on-surface-variant mt-2">
                   Lunes a Sábado: 08:00 AM - 06:00 PM
@@ -160,7 +160,10 @@ export default function ContactoPage() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label className="font-label-md text-label-md text-on-surface uppercase" htmlFor="nombre">
+                  <Label
+                    className="font-label-md text-label-md text-on-surface uppercase"
+                    htmlFor="nombre"
+                  >
                     Nombre Completo
                   </Label>
                   <Input
@@ -173,7 +176,10 @@ export default function ContactoPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="font-label-md text-label-md text-on-surface uppercase" htmlFor="empresa">
+                  <Label
+                    className="font-label-md text-label-md text-on-surface uppercase"
+                    htmlFor="empresa"
+                  >
                     Empresa / RUC
                   </Label>
                   <Input
@@ -188,7 +194,10 @@ export default function ContactoPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label className="font-label-md text-label-md text-on-surface uppercase" htmlFor="correo">
+                  <Label
+                    className="font-label-md text-label-md text-on-surface uppercase"
+                    htmlFor="correo"
+                  >
                     Correo Corporativo
                   </Label>
                   <Input
@@ -201,7 +210,10 @@ export default function ContactoPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="font-label-md text-label-md text-on-surface uppercase" htmlFor="telefono">
+                  <Label
+                    className="font-label-md text-label-md text-on-surface uppercase"
+                    htmlFor="telefono"
+                  >
                     Teléfono de Contacto
                   </Label>
                   <Input
@@ -214,14 +226,20 @@ export default function ContactoPage() {
                     title="Ingresa solo números; puede incluir un + inicial"
                     type="tel"
                     onChange={(event) => {
-                      event.target.value = event.target.value.replace(/[^\d+\s]/g, "");
+                      event.target.value = event.target.value.replace(
+                        /[^\d+\s]/g,
+                        "",
+                      );
                     }}
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label className="font-label-md text-label-md text-on-surface uppercase" htmlFor="detalles">
+                <Label
+                  className="font-label-md text-label-md text-on-surface uppercase"
+                  htmlFor="detalles"
+                >
                   Detalles del Requerimiento
                 </Label>
                 <Textarea

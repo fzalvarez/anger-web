@@ -34,7 +34,11 @@ export default function ServicioExclusivoPage() {
             <div className="pt-8">
               <AppLinkButton
                 className="px-10 py-4 shadow-lg w-fit"
-                rightIcon={<span className="material-symbols-outlined">arrow_forward</span>}
+                rightIcon={
+                  <span className="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                }
                 to="#quote"
                 variant="secondary"
               >
@@ -64,8 +68,8 @@ export default function ServicioExclusivoPage() {
           {[
             {
               tag: "CONSUMO MASIVO & RETAIL",
-              title: "Furgones Cerrados de 15 a 30 TN",
-              text: "Unidades herméticas ideales para consumo masivo, retail y carga seca farmacéutica. Capacidades volumétricas optimizadas de 50 a 90 m³ que maximizan el factor de estiba en carga paletizada.",
+              title: "Furgones Cerrados de 2 a 30 TN",
+              text: "Unidades herméticas ideales para consumo masivo, retail y carga seca farmacéutica. Capacidades volumétricas optimizadas de 10 a 90 m³ que maximizan el factor de estiba en carga paletizada.",
               image:
                 "https://lh3.googleusercontent.com/aida-public/AB6AXuAsSRZAFqrwc2jnIrU4NYd9zT0HGm-FEZo-3x__ET7wvgirW4NAU3gXn645d3omSoApluEkcvlSV2xR9lXMwaMNYsAgSNsX-C5p1sL5CZRYWdvwmr1QvoXtvli4IG04e8KZ5xJYqiK7Am8C-LX6S-xbnRl4BIs5UxxZlMoF0qP6x2CN45u7uVIkLrQQPPu-xc-UJb4rIZOQzQSU5SIub4Na68a0z8GROt6Pg8CkqzoMI94mwzGVtm_0GZXHEGEUoO5thO25CDdT4d4_",
               items: [
@@ -233,7 +237,7 @@ export default function ServicioExclusivoPage() {
             <AppLinkButton
               className="bg-transparent p-0 h-auto shadow-none rounded-none flex items-center gap-2 font-bold text-primary hover:bg-transparent hover:text-secondary transition-colors text-body-md font-body-md"
               leftIcon={<span className="material-symbols-outlined">call</span>}
-              to="tel:013653968"
+              to="tel:+51941841853"
               variant="ghost"
               size="sm"
             >

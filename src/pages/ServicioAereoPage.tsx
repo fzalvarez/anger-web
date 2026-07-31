@@ -42,7 +42,11 @@ export default function ServicioAereoPage() {
             <div className="flex flex-wrap gap-4">
               <AppLinkButton
                 className="px-8 py-4"
-                rightIcon={<span className="material-symbols-outlined">arrow_forward</span>}
+                rightIcon={
+                  <span className="material-symbols-outlined">
+                    arrow_forward
+                  </span>
+                }
                 to="#coordinar"
                 variant="secondary"
               >
@@ -246,8 +250,10 @@ export default function ServicioAereoPage() {
 
             <AppLinkButton
               className="px-10 py-5 border border-on-primary/40 text-on-primary hover:bg-on-primary/10 justify-center"
-              rightIcon={<span className="material-symbols-outlined">call</span>}
-              to="tel:013653968"
+              rightIcon={
+                <span className="material-symbols-outlined">call</span>
+              }
+              to="tel:+51941841853"
               variant="outline"
             >
               Llamar a Despacho

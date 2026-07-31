@@ -115,9 +115,9 @@ export default function SeguimientoPage() {
                       Llama a nuestra línea dedicada al{" "}
                       <a
                         className="text-secondary font-bold hover:underline"
-                        href="tel:013653968"
+                        href="tel:+51941841853"
                       >
-                        (01) 365 3968
+                        +51941841853
                       </a>
                       .
                     </p>
