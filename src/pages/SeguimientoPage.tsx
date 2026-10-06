@@ -1,31 +1,73 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { AppButton } from "../components/common/AppButton";
+import { AppLinkButton } from "../components/common/AppLinkButton";
+import { MathCaptcha } from "#components/seguimiento/MathCaptcha";
+import { TrackingResultado } from "#components/seguimiento/TrackingResultado";
+import { useMathCaptcha } from "#hooks/useMathCaptcha";
+import {
+  fetchTrackingPorNumero,
+  TrackingNotFoundError,
+  type TrackingPublico,
+} from "#lib/tracking";
+
+type Estado =
+  | { tipo: "inicial" }
+  | { tipo: "cargando" }
+  | { tipo: "error"; mensaje: string }
+  | { tipo: "listo"; tracking: TrackingPublico; consultado: string };
 
 export default function SeguimientoPage() {
-  const [tracking, setTracking] = useState("");
-  const [loading, setLoading] = useState(false);
+  // El enlace compartido (?guia=XXX) precarga el número; la verificación sigue siendo obligatoria.
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [tracking, setTracking] = useState(() => searchParams.get("guia") ?? "");
+  const [estado, setEstado] = useState<Estado>({ tipo: "inicial" });
   const [inputError, setInputError] = useState(false);
   const [highlight, setHighlight] = useState(false);
+  const captcha = useMathCaptcha();
   const resultsRef = useRef<HTMLElement | null>(null);
 
-  const handleSearch = () => {
-    if (!tracking.trim()) {
+  const loading = estado.tipo === "cargando";
+
+  useEffect(() => {
+    if (estado.tipo !== "listo") return;
+    resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const timer = setTimeout(() => setHighlight(false), 1500);
+    return () => clearTimeout(timer);
+  }, [estado]);
+
+  const handleSearch = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const valor = tracking.trim().toUpperCase();
+
+    if (!valor) {
       setInputError(true);
       setTimeout(() => setInputError(false), 2000);
       return;
     }
-
-    setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
-      resultsRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+    if (!captcha.esValido) {
+      setEstado({
+        tipo: "error",
+        mensaje: "Resuelve la verificación de seguridad para continuar.",
       });
+      return;
+    }
+
+    setEstado({ tipo: "cargando" });
+    try {
+      const resultado = await fetchTrackingPorNumero(valor);
+      setEstado({ tipo: "listo", tracking: resultado, consultado: valor });
       setHighlight(true);
-      setTimeout(() => setHighlight(false), 1500);
-    }, 1200);
+      setSearchParams({ guia: valor }, { replace: true });
+    } catch (error) {
+      const mensaje =
+        error instanceof TrackingNotFoundError
+          ? error.message
+          : "No se pudo consultar el estado en este momento. Intenta de nuevo en unos minutos o comunícate con nuestra Central de Operaciones.";
+      setEstado({ tipo: "error", mensaje });
+    } finally {
+      captcha.reiniciar();
+    }
   };
 
   return (
@@ -37,47 +79,85 @@ export default function SeguimientoPage() {
           </h1>
 
           <p className="font-body-lg text-body-lg text-on-surface-variant mb-10">
-            Consulta el estado actual y la ubicación de tu mercancía en tiempo
-            real.
+            Ingresa el número de tu guía de remisión para conocer el estado y
+            el historial de tu mercancía.
           </p>
 
-          <div className="flex flex-col md:flex-row gap-4 p-2 bg-white rounded-xl shadow-xl border border-outline-variant max-w-3xl mx-auto group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
-            <div className="grow flex items-center px-4">
-              <span className="material-symbols-outlined text-outline mr-3">
-                search
-              </span>
-              <input
-                className={`w-full border-none focus:ring-0 font-body-md text-body-md bg-transparent placeholder-outline ${
-                  inputError ? "ring-2 ring-secondary/50" : ""
+          <form noValidate onSubmit={handleSearch}>
+            <div className="flex flex-col md:flex-row gap-4 p-2 bg-white rounded-xl shadow-xl border border-outline-variant max-w-3xl mx-auto group focus-within:ring-2 focus-within:ring-[#021356]/20 transition-all">
+              <div
+                className={`grow flex items-center px-4 rounded-lg transition-all ${
+                  inputError ? "ring-2 ring-[#bc0100]/50" : ""
                 }`}
-                placeholder="Ingresa el número de guía de remisión o código de tracking..."
-                type="text"
-                value={tracking}
-                onChange={(event) => setTracking(event.target.value)}
-              />
+              >
+                <span className="material-symbols-outlined text-outline mr-3">
+                  search
+                </span>
+                <input
+                  aria-label="Número de guía de remisión"
+                  autoComplete="off"
+                  className="w-full border-none outline-none focus:ring-0 font-body-md text-body-md bg-transparent placeholder-outline py-3 uppercase placeholder:normal-case"
+                  placeholder="Ej: GR-2026-003 o la guía de tu empresa (F001-0007356)"
+                  type="text"
+                  value={tracking}
+                  onChange={(event) => setTracking(event.target.value)}
+                />
+              </div>
+
+              <AppButton
+                className="px-8 py-4 h-auto rounded-lg font-label-md text-label-md hover:bg-secondary active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
+                disabled={loading}
+                leftIcon={
+                  loading ? (
+                    <span className="material-symbols-outlined animate-spin">
+                      sync
+                    </span>
+                  ) : null
+                }
+                type="submit"
+                variant="secondary"
+              >
+                {loading ? "Consultando..." : "Consultar Estado"}
+              </AppButton>
             </div>
 
-            <AppButton
-              className="px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-secondary active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
-              disabled={loading}
-              leftIcon={
-                loading ? (
-                  <span className="material-symbols-outlined animate-spin">
-                    sync
-                  </span>
-                ) : null
-              }
-              type="button"
-              variant="secondary"
-              onClick={handleSearch}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
+              <MathCaptcha captcha={captcha} />
+              <p className="font-body-sm text-body-sm text-on-surface-variant">
+                Puedes usar el número de guía de Anger o el de tu empresa.
+              </p>
+            </div>
+          </form>
+
+          {estado.tipo === "error" && (
+            <div
+              className="max-w-3xl mx-auto mt-6 flex items-start gap-3 text-left bg-secondary-fixed text-on-secondary-fixed-variant border-l-4 border-secondary rounded-lg px-4 py-3"
+              role="alert"
             >
-              {loading ? "Consultando..." : "Consultar Estado"}
-            </AppButton>
-          </div>
+              <span className="material-symbols-outlined text-secondary">
+                error
+              </span>
+              <p className="font-body-sm text-body-sm font-semibold">
+                {estado.mensaje}
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
-      <section className="py-6 px-margin-mobile">
+      {estado.tipo === "listo" && (
+        <section ref={resultsRef} className="py-6 px-margin-mobile scroll-mt-24">
+          <div className="max-w-5xl mx-auto">
+            <TrackingResultado
+              consultado={estado.consultado}
+              highlight={highlight}
+              tracking={estado.tracking}
+            />
+          </div>
+        </section>
+      )}
+
+      <section className="py-12 px-margin-mobile">
         <div className="max-w-4xl mx-auto">
           <div className="bg-surface-container-low border-l-4 border-secondary rounded-xl p-6 md:p-8 shadow-sm">
             <div className="flex items-start gap-4">
@@ -87,15 +167,13 @@ export default function SeguimientoPage() {
 
               <div>
                 <h2 className="font-headline-sm text-headline-sm text-primary mb-3">
-                  Canales de Consulta Directa
+                  ¿No encuentras tu guía o necesitas más detalle?
                 </h2>
 
                 <p className="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
-                  Actualmente nos encontramos digitalizando e integrando de
-                  forma automatizada nuestros sistemas de seguimiento en ruta.
-                  Si deseas conocer el estado exacto, ubicación actual o
-                  confirmación de entrega de tu carga, utiliza nuestros canales
-                  directos de atención inmediata:
+                  Si deseas conocer la ubicación exacta de tu carga, coordinar
+                  una entrega o reportar una incidencia, utiliza nuestros
+                  canales directos de atención inmediata:
                 </p>
 
                 <div className="grid grid-cols-1 gap-4">
@@ -144,186 +222,10 @@ export default function SeguimientoPage() {
         </div>
       </section>
 
-      <section ref={resultsRef} className="py-12 px-margin-mobile">
-        <div className="max-w-5xl mx-auto">
-          <div
-            className={`bg-white rounded-xl shadow-2xl border border-outline-variant overflow-hidden transition-all ${
-              highlight ? "ring-4 ring-secondary/20" : ""
-            }`}
-          >
-            <div className="bg-primary p-8 text-on-primary">
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                  <span className="text-xs uppercase tracking-widest opacity-80 font-bold">
-                    Estado del Envío
-                  </span>
-                  <h3 className="font-headline-md text-headline-md mt-1">
-                    Guía de Remisión: GR-2026-XXXX{" "}
-                    <span className="text-sm opacity-60 font-normal ml-2">
-                      (Simulación)
-                    </span>
-                  </h3>
-                </div>
-
-                <div className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 flex items-center gap-2">
-                  <span className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75" />
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary" />
-                  </span>
-                  <span className="font-label-md text-label-md">
-                    EN TRÁNSITO
-                  </span>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 pt-8 border-t border-white/10">
-                {[
-                  ["Servicio", "ANGER EXCLUSIVO"],
-                  ["Destino", "Chiclayo, Lambayeque"],
-                  ["Cliente", "Corporativo XYZ"],
-                  ["Est. Entrega", "24 Oct, 2024"],
-                ].map(([label, value]) => (
-                  <div key={label}>
-                    <p className="text-xs opacity-70 uppercase font-bold">
-                      {label}
-                    </p>
-                    <p className="font-label-md text-label-md mt-1">{value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="p-8 md:p-12">
-              <div className="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-4">
-                {[
-                  {
-                    icon: "inventory_2",
-                    title: "Recojo de Mercancía",
-                    text: "Carga estibada y validada en almacén de origen.",
-                    status: "22 OCT - 09:15 AM",
-                    active: true,
-                  },
-                  {
-                    icon: "local_shipping",
-                    title: "En Tránsito",
-                    text: "Unidad en ruta nacional bajo monitoreo satelital GPS activo.",
-                    status: "EN PROCESO",
-                    active: true,
-                  },
-                  {
-                    icon: "warehouse",
-                    title: "Llegada a Destino",
-                    text: "Ingreso a Centro de Distribución / Almacén principal.",
-                    status: "PENDIENTE",
-                    active: false,
-                  },
-                  {
-                    icon: "verified",
-                    title: "Entrega Confirmada",
-                    text: "Guía firmada y conformidad reportada al cliente.",
-                    status: "PENDIENTE",
-                    active: false,
-                  },
-                ].map((step) => (
-                  <div
-                    key={step.title}
-                    className={`relative z-10 flex flex-col items-center text-center w-full md:w-1/4 ${
-                      step.active ? "" : "opacity-40"
-                    }`}
-                  >
-                    <div
-                      className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${
-                        step.active
-                          ? "bg-secondary text-on-secondary shadow-lg"
-                          : "bg-surface-variant text-on-surface-variant"
-                      } ${step.title === "En Tránsito" ? "ring-8 ring-secondary/20" : ""}`}
-                    >
-                      <span
-                        className="material-symbols-outlined"
-                        style={
-                          step.active
-                            ? { fontVariationSettings: "'FILL' 1" }
-                            : undefined
-                        }
-                      >
-                        {step.icon}
-                      </span>
-                    </div>
-                    <h4 className="font-label-md text-label-md text-primary">
-                      {step.title}
-                    </h4>
-                    <p className="text-[11px] text-on-surface-variant mt-2 leading-tight">
-                      {step.text}
-                    </p>
-                    <p
-                      className={`text-[10px] font-bold mt-1 ${
-                        step.active
-                          ? "text-secondary"
-                          : "text-on-surface-variant"
-                      }`}
-                    >
-                      {step.status}
-                    </p>
-                  </div>
-                ))}
-
-                <div className="hidden md:block absolute top-6 left-[12.5%] right-[62.5%] h-1 bg-secondary z-0" />
-                <div className="hidden md:block absolute top-6 left-[37.5%] right-[37.5%] h-1 border-t-4 border-dashed border-outline-variant z-0" />
-                <div className="hidden md:block absolute top-6 left-[62.5%] right-[12.5%] h-1 border-t-4 border-dashed border-outline-variant z-0" />
-              </div>
-            </div>
-
-            <div className="bg-surface h-80 relative overflow-hidden">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjFlhb7Kj6UUgquHRe6TBOHUTYubmrd9DOpgyFHnjdrPOqkGzMQtDzxMygGD97Wx1CYz4a1zv9r9lQl3BpbzRs-HhpmO_JSB9M_SkDddwy5XDgdy6fhK3V_af6ihKkcqyzWfgcwzZYfuEaYa3_E44pBJR943EG0zFiLs6HkVVVTiiIS2Z_SCtTecpHkcicPbpu-Y7palxllBRN09tzTVr1O8qpeDpYzAV16hiV5PIC_bqt6RsZlVIYbQMOUggITWJsnFioYoW_q61m')",
-                }}
-              />
-
-              <div className="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row gap-4">
-                <div className="bg-white p-4 rounded-lg shadow-lg border border-outline-variant flex items-center gap-4 flex-1 max-w-sm">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <span className="material-symbols-outlined text-primary">
-                      location_on
-                    </span>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold text-outline uppercase tracking-wider">
-                      Última Ubicación Conocida
-                    </p>
-                    <p className="font-label-md text-label-md text-primary">
-                      Km 540 Panamericana Norte, Virú
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-lg border border-outline-variant flex items-center gap-4 flex-1 max-w-sm">
-                  <div className="p-3 bg-secondary/10 rounded-lg">
-                    <span className="material-symbols-outlined text-secondary">
-                      speed
-                    </span>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold text-outline uppercase tracking-wider">
-                      Velocidad Promedio
-                    </p>
-                    <p className="font-label-md text-label-md text-primary">
-                      78 km/h
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 bg-primary text-on-primary">
         <div className="max-w-container-max mx-auto px-margin-desktop grid md:grid-cols-2 items-center gap-12">
           <div>
-            <h2 className="font-headline-lg text-headline-lg mb-4">
+            <h2 className="font-headline-lg text-headline-lg mb-4 text-white">
               ¿Necesitas soporte especializado para tu carga?
             </h2>
             <p className="font-body-lg text-body-lg text-white/80 mb-8">
@@ -331,20 +233,20 @@ export default function SeguimientoPage() {
               solución en transporte y distribución a nivel nacional.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <AppButton
-                className="px-8 py-4 shadow-lg"
-                type="button"
+              <AppLinkButton
+                className="px-8 py-4 h-auto shadow-lg"
+                to="/contacto"
                 variant="secondary"
               >
                 Solicitar Cotización
-              </AppButton>
-              <AppButton
-                className="border border-white/40 text-white px-8 py-4 hover:bg-white/10"
-                type="button"
+              </AppLinkButton>
+              <AppLinkButton
+                className="border border-white/40 text-white px-8 py-4 h-auto hover:bg-white/10"
+                to="/servicios"
                 variant="outline"
               >
                 Saber más
-              </AppButton>
+              </AppLinkButton>
             </div>
           </div>
 
