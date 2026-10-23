@@ -19,8 +19,9 @@ export interface TrackingEvento {
   /** Hora local de Lima, sin offset (ej. "2026-09-14T17:01:00"). */
   fecha_evento: string;
   descripcion: string | null;
-  /** La foto no se expone en la consulta pública; solo se indica si existe. */
-  tiene_foto: boolean;
+  /** Data URL de la foto (evidencia), si se adjuntó. La web solo indica que
+   * existe; no la muestra. */
+  foto: string | null;
   created_at: string;
 }
 

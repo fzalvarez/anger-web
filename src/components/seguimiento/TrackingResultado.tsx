@@ -366,7 +366,7 @@ function EventoItem({
             {evento.descripcion}
           </p>
         )}
-        {evento.tiene_foto && (
+        {evento.foto && (
           <span className="mt-1 inline-flex w-fit items-center gap-1 rounded bg-surface-container px-2 py-0.5 text-[11px] font-bold text-primary">
             <span className="material-symbols-outlined text-[14px]">
               photo_camera

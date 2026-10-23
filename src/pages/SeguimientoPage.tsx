@@ -97,7 +97,7 @@ export default function SeguimientoPage() {
                   aria-label="Número de guía de remisión"
                   autoComplete="off"
                   className="w-full border-none outline-none focus:ring-0 font-body-md text-body-md bg-transparent placeholder-outline py-3 uppercase placeholder:normal-case"
-                  placeholder="Ej: GR-2026-003 o la guía de tu empresa (F001-0007356)"
+                  placeholder="Ej: EG07-1043 o la guía de tu empresa (T001-217387)"
                   type="text"
                   value={tracking}
                   onChange={(event) => setTracking(event.target.value)}
